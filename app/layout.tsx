@@ -4,11 +4,17 @@ import "./globals.css";
 
 
 
+
+
 export const metadata: Metadata = {
-  title: "Fatoş Yılmaz Management & Casting",
-  description: "Cast Direktörü ve Menajerlik Hizmetleri. Sinema, dizi ve reklam projeleri için profesyonel yetenek yönetimi.",
+  title: "Fatoş Yılmaz Management & Casting | Cast Direktörü",
+  description: "Fatoş Yılmaz yönetiminde profesyonel cast direktörlüğü ve menajerlik.",
+  // Google doğrulaması buraya geliyor:
+  verification: {
+    google: "BRajwJY_IgCASV694ckVHfXMpksqz1xb8b5Yb8VOtkU",
+  },
   icons: {
-    icon: "/favicon.svg", // SVG ikonumuzu buraya bağlıyoruz
+    icon: "/favicon.svg",
   },
 };
 
