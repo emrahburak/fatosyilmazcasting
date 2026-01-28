@@ -16,6 +16,29 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  openGraph: {
+    title: "Fatoş Yılmaz Management & Casting",
+    description: "Profesyonel Yetenek Yönetimi ve Cast Direktörlüğü",
+    url: "https://fatosyilmazcasting.com",
+    siteName: "Fatoş Yılmaz Casting",
+    images: [
+      {
+        url: "/fatos-yilmaz-og.png", // Public klasörüne attığın dosya ismiyle aynı olmalı
+        width: 1200,
+        height: 630,
+        alt: "Fatoş Yılmaz Management & Casting Logo",
+      },
+    ],
+    locale: "tr_TR",
+    type: "website",
+  },
+  // Twitter (X) için özel kart ayarı
+  twitter: {
+    card: "summary_large_image",
+    title: "Fatoş Yılmaz Management & Casting",
+    description: "Profesyonel Yetenek Yönetimi ve Cast Direktörlüğü",
+    images: ["/fatos-yilmaz-og.png"],
+  },
 };
 
 const geistSans = Geist({
