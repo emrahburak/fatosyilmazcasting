@@ -7,6 +7,7 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://fatosyilmazcasting.com'),
   title: "Fatoş Yılmaz Management & Casting | Cast Direktörü",
   description: "Fatoş Yılmaz yönetiminde profesyonel cast direktörlüğü ve menajerlik.",
   // Google doğrulaması buraya geliyor:
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Fatoş Yılmaz Casting",
     images: [
       {
-        url: "/fatos-yilmaz-og.png", // Public klasörüne attığın dosya ismiyle aynı olmalı
+        url: "/fatos-yilmaz-og.png", // Başına https eklemene gerek kalmaz, metadataBase halleder
         width: 1200,
         height: 630,
         alt: "Fatoş Yılmaz Management & Casting Logo",
@@ -32,7 +33,6 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     type: "website",
   },
-  // Twitter (X) için özel kart ayarı
   twitter: {
     card: "summary_large_image",
     title: "Fatoş Yılmaz Management & Casting",
