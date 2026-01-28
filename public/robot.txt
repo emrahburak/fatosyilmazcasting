@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
+
 # Arama motorlarına sitemap yerini gösterelim
 Sitemap: https://fatosyilmazcasting.com/sitemap.xml
