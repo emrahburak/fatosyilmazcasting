@@ -7,7 +7,7 @@ import { useGSAP } from '@gsap/react';
 export default function ComingSoon() {
   const container = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null); // Eksik olan referans eklendi
+  const textRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     // 3D Derinlikli Dönüş (RotateY)

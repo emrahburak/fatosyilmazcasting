@@ -1,0 +1,166 @@
+// Fatoş Yılmaz Casting - DB Schema
+// Cloudflare D1 (SQLite) uyumlu, PostgreSQL'e taşınabilir
+// i18n: TR/EN çoklu dil desteği
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// AUTH & USERS
+// ============================================
+
+model User {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  passwordHash String
+  role         String   // SUPERADMIN, AGENT
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("users")
+}
+
+// ============================================
+// TALENT (OYUNCU)
+// ============================================
+
+model Talent {
+  id              Int      @id @default(autoincrement())
+  slug            String   @unique
+  fullName        String
+  
+  // Fiziksel Özellikler
+  height          Int?     // cm
+  weight          Int?     // kg
+  eyeColor        String?  // key: "blue", "brown" vb.
+  hairColor       String?  // key: "blonde", "black" vb.
+  skinColor       String?  // key: "fair", "medium" vb.
+  shoeSize        Int?     // numara
+  bodySize        String?  // "S", "M", "L" veya "36", "38" vb.
+  
+  // i18n Metin Alanları
+  bioTr           String?  @db.Text
+  bioEn           String?  @db.Text
+  educationTr     String?
+  educationEn     String?
+  
+  // Metadata
+  birthDate       DateTime?
+  gender          String?  // "female", "male", "non-binary"
+  city            String?
+  passport        Boolean  @default(false)
+  drivingLicense  String?  // "B", "A", "none"
+  
+  // Social
+  instagramUrl    String?
+  showreelUrl     String?
+  
+  // Status
+  isActive        Boolean  @default(true)
+  isFeatured      Boolean  @default(false)
+  
+  // İlişkiler
+  skills          TalentSkill[]
+  experiences     Experience[]
+  media           Media[]
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([slug])
+  @@index([isActive])
+  @@map("talents")
+}
+
+// ============================================
+// SKILLS (YETENEKLER) - Many-to-Many
+// ============================================
+
+model Skill {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique // "piano", "horseback_riding" vb.
+  category  String   // "music", "sport", "language" vb.
+  
+  talents   TalentSkill[]
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category])
+  @@map("skills")
+}
+
+model TalentSkill {
+  id        Int      @id @default(autoincrement())
+  talentId  Int
+  skillId   Int
+  
+  talent    Talent   @relation(fields: [talentId], references: [id], onDelete: Cascade)
+  skill     Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([talentId, skillId])
+  @@index([talentId])
+  @@index([skillId])
+  @@map("talent_skills")
+}
+
+// ============================================
+// EXPERIENCE (DENENEYİM)
+// ============================================
+
+model Experience {
+  id          Int      @id @default(autoincrement())
+  talentId    Int
+  type        String   // "dizi", "sinema", "reklam", "tiyatro"
+  projectName String
+  roleName    String?
+  year        Int?
+  notes       String?  @db.Text
+  
+  talent      Talent   @relation(fields: [talentId], references: [id], onDelete: Cascade)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([talentId])
+  @@index([type])
+  @@map("experiences")
+}
+
+// ============================================
+// MEDIA (MEDYA)
+// ============================================
+
+model Media {
+  id        Int      @id @default(autoincrement())
+  talentId  Int
+  url       String   // R2 URL
+  type      String   // "headshot", "portfolio", "video"
+  isPrimary Boolean  @default(false)
+  order     Int      @default(0)
+  
+  // R2 Metadata
+  bucket    String?
+  key       String?
+  size      Int?     // bytes
+  mimeType  String?
+  
+  talent    Talent   @relation(fields: [talentId], references: [id], onDelete: Cascade)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([talentId])
+  @@index([type])
+  @@map("media")
+}

@@ -2,15 +2,14 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-
-
-
-
+// Root metadata - her iki route group da bunu inherit eder
 export const metadata: Metadata = {
   metadataBase: new URL('https://fatosyilmazcasting.com'),
-  title: "Fatoş Yılmaz Management & Casting | Cast Direktörü",
-  description: "Fatoş Yılmaz yönetiminde profesyonel cast direktörlüğü ve menajerlik.",
-  // Google doğrulaması buraya geliyor:
+  title: {
+    default: "Fatoş Yılmaz Management & Casting",
+    template: "%s | Fatoş Yılmaz Casting",
+  },
+  description: "Profesyonel Yetenek Yönetimi ve Cast Direktörlüğü",
   verification: {
     google: "BRajwJY_IgCASV694ckVHfXMpksqz1xb8b5Yb8VOtkU",
   },
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Fatoş Yılmaz Casting",
     images: [
       {
-        url: "/fatos-yilmaz-og.png", // Başına https eklemene gerek kalmaz, metadataBase halleder
+        url: "/fatos-yilmaz-og.png",
         width: 1200,
         height: 630,
         alt: "Fatoş Yılmaz Management & Casting Logo",
@@ -51,18 +50,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning={true} // Bu satırı ekle
+        suppressHydrationWarning={true}
       >
         {children}
       </body>

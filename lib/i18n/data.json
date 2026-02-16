@@ -1,0 +1,118 @@
+{
+  "tr": {
+    "genders": {
+      "female": "Kadın",
+      "male": "Erkek",
+      "non-binary": "Non-binary"
+    },
+    "eyeColors": {
+      "blue": "Mavi",
+      "brown": "Kahverengi",
+      "green": "Yeşil",
+      "hazel": "Ela",
+      "gray": "Gri",
+      "black": "Siyah"
+    },
+    "hairColors": {
+      "blonde": "Sarı",
+      "brown": "Kahverengi",
+      "black": "Siyah",
+      "red": "Kızıl",
+      "gray": "Gri",
+      "white": "Beyaz"
+    },
+    "skinColors": {
+      "fair": "Açık",
+      "medium": "Orta",
+      "olive": "Buğday",
+      "dark": "Koyu"
+    },
+    "drivingLicenses": {
+      "none": "Yok",
+      "B": "B Sınıfı",
+      "A": "A Sınıfı",
+      "C": "C Sınıfı"
+    },
+    "experienceTypes": {
+      "dizi": "TV Dizisi",
+      "sinema": "Sinema Filmi",
+      "reklam": "Reklam",
+      "tiyatro": "Tiyatro",
+      "kısa_film": "Kısa Film",
+      "muzik_videosu": "Müzik Videosu"
+    },
+    "mediaTypes": {
+      "headshot": "Headshot",
+      "portfolio": "Portfolyo",
+      "video": "Video",
+      "behind_scenes": "Kamera Arkası"
+    },
+    "skillCategories": {
+      "music": "Müzik",
+      "sport": "Spor",
+      "language": "Dil",
+      "art": "Sanat",
+      "combat": "Dövüş",
+      "dance": "Dans",
+      "instrument": "Enstrüman"
+    }
+  },
+  "en": {
+    "genders": {
+      "female": "Female",
+      "male": "Male",
+      "non-binary": "Non-binary"
+    },
+    "eyeColors": {
+      "blue": "Blue",
+      "brown": "Brown",
+      "green": "Green",
+      "hazel": "Hazel",
+      "gray": "Gray",
+      "black": "Black"
+    },
+    "hairColors": {
+      "blonde": "Blonde",
+      "brown": "Brown",
+      "black": "Black",
+      "red": "Red",
+      "gray": "Gray",
+      "white": "White"
+    },
+    "skinColors": {
+      "fair": "Fair",
+      "medium": "Medium",
+      "olive": "Olive",
+      "dark": "Dark"
+    },
+    "drivingLicenses": {
+      "none": "None",
+      "B": "Class B",
+      "A": "Class A",
+      "C": "Class C"
+    },
+    "experienceTypes": {
+      "dizi": "TV Series",
+      "sinema": "Feature Film",
+      "reklam": "Commercial",
+      "tiyatro": "Theater",
+      "kısa_film": "Short Film",
+      "muzik_videosu": "Music Video"
+    },
+    "mediaTypes": {
+      "headshot": "Headshot",
+      "portfolio": "Portfolio",
+      "video": "Video",
+      "behind_scenes": "Behind the Scenes"
+    },
+    "skillCategories": {
+      "music": "Music",
+      "sport": "Sports",
+      "language": "Language",
+      "art": "Art",
+      "combat": "Combat",
+      "dance": "Dance",
+      "instrument": "Instrument"
+    }
+  }
+}
