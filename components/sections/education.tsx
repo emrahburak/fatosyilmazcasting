@@ -13,18 +13,19 @@ gsap.registerPlugin(ScrollTrigger);
 const cities = ['İstanbul', 'Zurich', 'Berlin', 'Amsterdam'] as const;
 type City = (typeof cities)[number];
 
+type EducationItem = typeof educationData.education_gallery[number];
+
 export default function Education() {
   const [selectedCity, setSelectedCity] = useState<City | null>(null);
   const container = useRef<HTMLDivElement>(null);
 
   const educationItems = educationData.education_gallery;
 
-  const itemsPerCity = Math.ceil(educationItems.length / cities.length);
-  const cityImages: Record<City, typeof educationItems> = {
-    'İstanbul': educationItems.slice(0, itemsPerCity),
-    'Zurich': educationItems.slice(itemsPerCity, itemsPerCity * 2),
-    'Berlin': educationItems.slice(itemsPerCity * 2, itemsPerCity * 3),
-    'Amsterdam': educationItems.slice(itemsPerCity * 3),
+  const cityGroups: Record<City, EducationItem[]> = {
+    'İstanbul': educationItems.filter((item) => item.location === 'İstanbul'),
+    'Zurich': educationItems.filter((item) => item.location === 'Zurich'),
+    'Berlin': educationItems.filter((item) => item.location === 'Berlin'),
+    'Amsterdam': educationItems.filter((item) => item.location === 'Amsterdam'),
   };
 
   useGSAP(() => {
@@ -59,8 +60,8 @@ export default function Education() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {cities.map((city) => {
-            const images = cityImages[city];
-            const coverImage = images[0];
+            const items = cityGroups[city];
+            const coverImage = items[0];
 
             return (
               <button
@@ -72,7 +73,7 @@ export default function Education() {
                 {coverImage ? (
                   <SafeImage
                     src={getMediaUrl(coverImage.file_name, 'education')}
-                    alt={city}
+                    alt={coverImage.title || city}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -86,8 +87,13 @@ export default function Education() {
                   <h3 className="font-cinzel text-white text-xl tracking-wide">
                     {city}
                   </h3>
-                  <p className="font-crimson text-gold/80 text-sm mt-1">
-                    {images.length} görsel
+                  {coverImage?.title && (
+                    <p className="font-crimson text-gold/80 text-sm mt-1">
+                      {coverImage.title}
+                    </p>
+                  )}
+                  <p className="font-crimson text-white/50 text-xs mt-1">
+                    {items.length} etkinlik
                   </p>
                 </div>
               </button>
@@ -124,7 +130,7 @@ export default function Education() {
               <div className="w-8 h-[1px] bg-gold mb-8" />
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {cityImages[selectedCity].map((item) => (
+                {cityGroups[selectedCity].map((item) => (
                   <div key={item.id} className="relative aspect-square bg-muted/10">
                     <SafeImage
                       src={getMediaUrl(item.file_name, 'education')}
@@ -134,11 +140,23 @@ export default function Education() {
                       className="object-cover"
                       fallbackClassName="absolute inset-0"
                     />
+                    {item.title && (
+                      <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
+                        <p className="font-cinzel text-white text-[10px] tracking-wider leading-tight">
+                          {item.title}
+                        </p>
+                        {item.year && (
+                          <p className="font-crimson text-gold/70 text-[9px] mt-0.5">
+                            {item.year}
+                          </p>
+                        )}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
 
-              {cityImages[selectedCity].length === 0 && (
+              {cityGroups[selectedCity].length === 0 && (
                 <p className="font-crimson text-muted italic text-center py-12">
                   İçerik yakında eklenecek.
                 </p>

@@ -66,7 +66,7 @@ export default function Contact() {
 
         <div className="mt-20 pt-8 border-t border-gold/20">
           <p className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-muted">
-            © 2024 Fatoş Yılmaz Casting. Tüm hakları saklıdır.
+            © 2026 Fatoş Yılmaz Management. Tüm hakları saklıdır.
           </p>
         </div>
       </div>
