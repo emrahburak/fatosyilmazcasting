@@ -98,7 +98,7 @@ export default function Filmography() {
                         {project.title}
                       </h3>
                       <p className="font-crimson text-gold/80 text-xs mt-1">
-                        {project.year} · {project.type}
+                        {project.year ?? '—'} · {project.type}
                       </p>
                     </div>
                   </>
@@ -108,7 +108,7 @@ export default function Filmography() {
                       {project.title}
                     </h3>
                     <p className="font-crimson text-gold/60 text-xs mt-2">
-                      {project.year} · {project.type}
+                      {project.year ?? '—'} · {project.type}
                     </p>
                   </div>
                 )}
@@ -173,7 +173,7 @@ export default function Filmography() {
                   <dt className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-gold mb-1">
                     Yıl
                   </dt>
-                  <dd className="text-white">{selectedProject.year}</dd>
+                  <dd className="text-white">{selectedProject.year ?? '—'}</dd>
                 </div>
                 <div>
                   <dt className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-gold mb-1">
