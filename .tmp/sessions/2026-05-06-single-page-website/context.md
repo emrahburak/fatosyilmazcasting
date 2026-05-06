@@ -2,8 +2,8 @@
 
 Session ID: 2026-05-06-single-page-website
 Created: 2026-05-06
-Status: in_progress
-Branch: develop-02
+Status: completed
+Branch: develop-02 (committed: 7362d20)
 
 ## Current Request
 Fatoy Yilmaz Casting markası için single-page, smooth scroll özellikli web sitesi inşa et.

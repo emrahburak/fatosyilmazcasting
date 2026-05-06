@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SafeImage from '@/components/shared/safe-image';
 import { getMediaUrl } from '@/lib/utils/media';
 import { ProjectSchema, type Project } from '@/lib/validations/project';
 import projectsData from '@/data/projects.json';
@@ -81,11 +81,12 @@ export default function Filmography() {
                 } ${isWide ? 'md:col-span-2' : ''}`}
                 style={{ aspectRatio: isLarge ? '1' : isWide ? '2/1' : '3/4' }}
               >
-                <Image
+                <SafeImage
                   src={getMediaUrl(project.fileName, 'afis')}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  fallbackClassName="absolute inset-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-bg-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
@@ -137,11 +138,12 @@ export default function Filmography() {
             </button>
 
             <div className="relative aspect-[3/4]">
-              <Image
+              <SafeImage
                 src={getMediaUrl(selectedProject.fileName, 'afis')}
                 alt={selectedProject.title}
                 fill
                 className="object-cover"
+                fallbackClassName="absolute inset-0"
               />
             </div>
 

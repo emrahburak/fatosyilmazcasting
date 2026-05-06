@@ -1,9 +1,9 @@
 'use client';
 
 import { useRef } from 'react';
-import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import SafeImage from '@/components/shared/safe-image';
 import { getMediaUrl } from '@/lib/utils/media';
 import heroData from '@/data/hero.json';
 
@@ -30,13 +30,14 @@ export default function Hero() {
       className="relative min-h-[100svh] bg-bg overflow-hidden flex items-center justify-center"
     >
       <div className="absolute inset-0">
-        <Image
+        <SafeImage
           src={getMediaUrl(profile.fileName, 'general')}
           alt={profile.altText}
           fill
           priority
           className="hero-image object-cover object-top grayscale"
           style={{ filter: 'brightness(0.85)' }}
+          fallbackClassName="absolute inset-0 bg-bg-dark"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-bg/70 via-bg/40 to-bg" />
       </div>

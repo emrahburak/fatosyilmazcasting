@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SafeImage from '@/components/shared/safe-image';
 import { getMediaUrl } from '@/lib/utils/media';
 import educationData from '@/data/education.json';
 
@@ -70,11 +70,12 @@ export default function Education() {
                 style={{ aspectRatio: '4/3' }}
               >
                 {coverImage ? (
-                  <Image
+                  <SafeImage
                     src={getMediaUrl(coverImage.file_name, 'education')}
                     alt={city}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    fallbackClassName="absolute inset-0"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-muted/20" />
@@ -124,11 +125,12 @@ export default function Education() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {cityImages[selectedCity].map((item) => (
                   <div key={item.id} className="relative aspect-square bg-muted/10">
-                    <Image
+                    <SafeImage
                       src={getMediaUrl(item.file_name, 'education')}
                       alt={item.title || selectedCity}
                       fill
                       className="object-cover"
+                      fallbackClassName="absolute inset-0"
                     />
                   </div>
                 ))}
