@@ -85,6 +85,7 @@ export default function Filmography() {
                   src={getMediaUrl(project.fileName, 'afis')}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   fallbackClassName="absolute inset-0"
                 />

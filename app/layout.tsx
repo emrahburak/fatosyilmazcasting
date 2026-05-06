@@ -18,6 +18,19 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://fatosyilmazcasting.com'),
   title: "Fatoş Yılmaz Casting | Cast Direktörü",
   description: "20+ yıllık deneyimle sinema ve dizi projeleri için profesyonel cast direktörlüğü. İstanbul, Zurich, Berlin, Amsterdam.",
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+    },
+  },
   verification: {
     google: "BRajwJY_IgCASV694ckVHfXMpksqz1xb8b5Yb8VOtkU",
   },

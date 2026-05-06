@@ -74,6 +74,7 @@ export default function Education() {
                     src={getMediaUrl(coverImage.file_name, 'education')}
                     alt={city}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     fallbackClassName="absolute inset-0"
                   />
@@ -129,6 +130,7 @@ export default function Education() {
                       src={getMediaUrl(item.file_name, 'education')}
                       alt={item.title || selectedCity}
                       fill
+                      sizes="(max-width: 768px) 50vw, 33vw"
                       className="object-cover"
                       fallbackClassName="absolute inset-0"
                     />

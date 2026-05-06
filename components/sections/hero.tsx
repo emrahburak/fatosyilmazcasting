@@ -35,6 +35,7 @@ export default function Hero() {
           alt={profile.altText}
           fill
           priority
+          sizes="100vw"
           className="hero-image object-cover object-top grayscale"
           style={{ filter: 'brightness(0.85)' }}
           fallbackClassName="absolute inset-0 bg-bg-dark"
