@@ -1,12 +1,12 @@
 <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="48" stroke="#a855f7" stroke-width="2" fill="black" />
+  <circle cx="50" cy="50" r="48" stroke="#c9a96e" stroke-width="2" fill="#faf8f4" />
   <text
     x="50%"
-    y="60%"
+    y="62%"
     dominant-baseline="middle"
     text-anchor="middle"
-    fill="white"
-    style="font-family: 'Times New Roman', serif; font-size: 70px; font-style: italic;"
+    fill="#c9a96e"
+    style="font-family: 'Times New Roman', serif; font-size: 72px; font-style: italic;"
   >
     f
   </text>
