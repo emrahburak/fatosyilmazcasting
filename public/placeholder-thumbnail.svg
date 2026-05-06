@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+  <rect width="400" height="600" fill="#1a1a1a"/>
+  <rect x="140" y="240" width="120" height="120" rx="60" fill="#c9a96e" opacity="0.15"/>
+  <text x="200" y="400" text-anchor="middle" font-family="serif" font-size="14" fill="#c9a96e" opacity="0.5" letter-spacing="2">FATOŞ YILMAZ</text>
+  <text x="200" y="420" text-anchor="middle" font-family="serif" font-size="10" fill="#c9a96e" opacity="0.35" letter-spacing="3">CASTING</text>
+</svg>

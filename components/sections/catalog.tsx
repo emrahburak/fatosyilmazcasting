@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Catalog() {
   const [isOpen, setIsOpen] = useState(false);
+  const [pdfLoaded, setPdfLoaded] = useState(false);
   const container = useRef<HTMLDivElement>(null);
   const pdfUrl = getCatalogPdfUrl();
 
@@ -82,7 +83,7 @@ export default function Catalog() {
       {isOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
-          onClick={() => setIsOpen(false)}
+          onClick={() => { setIsOpen(false); setPdfLoaded(false); }}
         >
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
           <div
@@ -101,7 +102,7 @@ export default function Catalog() {
                   İndir
                 </button>
                 <button
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => { setIsOpen(false); setPdfLoaded(false); }}
                   className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors"
                   aria-label="Kapat"
                 >
@@ -113,10 +114,20 @@ export default function Catalog() {
               </div>
             </div>
 
+            {!pdfLoaded && (
+              <div className="absolute inset-0 top-[44px] bg-bg flex flex-col items-center justify-center gap-4">
+                <div className="w-8 h-8 border-2 border-gold/30 border-t-gold rounded-full animate-spin" />
+                <span className="font-cinzel text-xs tracking-[0.16em] uppercase text-muted">
+                  Katalog yükleniyor...
+                </span>
+              </div>
+            )}
+
             <object
               data={pdfUrl}
               type="application/pdf"
               className="w-full h-[calc(100%-44px)]"
+              onLoad={() => setPdfLoaded(true)}
             >
               <div className="flex flex-col items-center justify-center h-full p-8 text-center">
                 <p className="font-crimson text-text-secondary text-lg mb-4">
