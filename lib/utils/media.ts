@@ -3,11 +3,11 @@ const CDN_BASE_URL = process.env.NEXT_PUBLIC_CDN_URL || 'https://cdn.timerightpr
 type MediaFolder = 'afis' | 'general' | 'instructor' | 'education' | 'catalog';
 
 const FOLDER_PATHS: Record<MediaFolder, string> = {
-  afis:       'timeright/fatosyilmazcasting/afis',
-  general:    'timeright/fatosyilmazcasting',
-  instructor: 'images/instructor',
-  education:  'timeright/fatosyilmazcasting/education',
-  catalog:    'timeright/fatosyilmazcasting/catalog',
+  afis:       'fatosyilmazcasting/afis',
+  general:    'fatosyilmazcasting',
+  instructor: 'fatosyilmazcasting/instructor',
+  education:  'fatosyilmazcasting/education',
+  catalog:    'fatosyilmazcasting/catalog',
 };
 
 export const getMediaUrl = (filename: string | null, folder: MediaFolder = 'general'): string => {
