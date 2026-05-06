@@ -29,7 +29,7 @@ export default function SafeImage({
         aria-label={alt as string}
       >
         <span className="text-muted text-xs font-cinzel tracking-wider">
-          GÃ¶rsel yakÄ±nda
+          G&ouml;rsel yak&#305;nda
         </span>
       </div>
     );

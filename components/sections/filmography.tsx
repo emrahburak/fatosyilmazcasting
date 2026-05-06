@@ -59,10 +59,10 @@ export default function Filmography() {
     <section id="filmography" ref={container} className="py-24 md:py-32 px-6 md:px-12 bg-bg-dark">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4">
+          <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
             Seçki
           </p>
-          <h2 className="font-cinzel text-3xl md:text-4xl text-white tracking-wide">
+          <h2 className="font-cinzel text-3xl md:text-4xl text-white tracking-wide font-semibold">
             Filmografi
           </h2>
         </div>
@@ -71,6 +71,7 @@ export default function Filmography() {
           {displayProjects.map((project, index) => {
             const isLarge = index === 0;
             const isWide = index === 3 || index === 7;
+            const hasPoster = !!project.fileName;
 
             return (
               <button
@@ -81,23 +82,36 @@ export default function Filmography() {
                 } ${isWide ? 'md:col-span-2' : ''}`}
                 style={{ aspectRatio: isLarge ? '1' : isWide ? '2/1' : '3/4' }}
               >
-                <SafeImage
-                  src={getMediaUrl(project.fileName, 'afis')}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  fallbackClassName="absolute inset-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-bg-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="font-cinzel text-white text-sm md:text-base tracking-wide">
-                    {project.title}
-                  </h3>
-                  <p className="font-crimson text-gold/80 text-xs mt-1">
-                    {project.year} · {project.type}
-                  </p>
-                </div>
+                {hasPoster ? (
+                  <>
+                    <SafeImage
+                      src={getMediaUrl(project.fileName, 'afis')}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      fallbackClassName="absolute inset-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-bg-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="font-cinzel text-white text-sm md:text-base tracking-wide font-medium">
+                        {project.title}
+                      </h3>
+                      <p className="font-crimson text-gold/80 text-xs mt-1">
+                        {project.year} · {project.type}
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-bg-dark/80">
+                    <h3 className="font-cinzel text-white text-sm md:text-base tracking-wide font-medium text-center leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="font-crimson text-gold/60 text-xs mt-2">
+                      {project.year} · {project.type}
+                    </p>
+                  </div>
+                )}
               </button>
             );
           })}
@@ -149,7 +163,7 @@ export default function Filmography() {
             </div>
 
             <div className="p-8 md:p-12">
-              <h3 className="font-cinzel text-2xl md:text-3xl text-white tracking-wide mb-2">
+              <h3 className="font-cinzel text-2xl md:text-3xl text-white tracking-wide font-semibold mb-2">
                 {selectedProject.title}
               </h3>
               <div className="w-8 h-[1px] bg-gold mb-6" />

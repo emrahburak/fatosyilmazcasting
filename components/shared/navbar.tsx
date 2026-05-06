@@ -53,7 +53,7 @@ export default function Navbar() {
               f
             </text>
           </svg>
-          <span className="font-cinzel text-xs tracking-[0.16em] uppercase text-text-primary hidden sm:block">
+          <span className="font-cinzel text-xs tracking-[0.12em] uppercase text-text-primary font-medium hidden sm:block">
             Fatoş Yılmaz
           </span>
         </a>
@@ -64,7 +64,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleClick(e, link.href)}
-              className="font-cinzel text-[11px] tracking-[0.16em] uppercase text-text-secondary hover:text-gold transition-colors duration-300"
+              className="font-cinzel text-[11px] tracking-[0.1em] uppercase text-text-secondary font-medium hover:text-gold transition-colors duration-300"
             >
               {link.label}
             </a>

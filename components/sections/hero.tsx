@@ -44,11 +44,11 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 text-center px-6">
-        <p className="hero-eyebrow font-cinzel text-gold text-xs tracking-[0.22em] uppercase mb-6">
+        <p className="hero-eyebrow font-cinzel text-gold text-xs tracking-[0.22em] uppercase mb-6 font-medium">
           {profile.title}
         </p>
 
-        <h1 className="hero-name font-cinzel text-[clamp(2.4rem,7vw,5.5rem)] text-text-primary leading-tight tracking-wide">
+        <h1 className="hero-name font-cinzel text-[clamp(2.4rem,7vw,5.5rem)] text-text-primary leading-tight tracking-wide font-semibold">
           {profile.name}
         </h1>
 

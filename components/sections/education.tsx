@@ -47,10 +47,10 @@ export default function Education() {
     <section id="education" ref={container} className="py-24 md:py-32 px-6 md:px-12 bg-bg">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4">
+          <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
             Atölyeler
           </p>
-          <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide">
+          <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide font-semibold">
             Eğitimler
           </h2>
           <p className="font-crimson text-muted mt-4 max-w-lg mx-auto">
@@ -84,7 +84,7 @@ export default function Education() {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 via-bg-dark/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-cinzel text-white text-xl tracking-wide">
+                  <h3 className="font-cinzel text-white text-xl tracking-wide font-medium">
                     {city}
                   </h3>
                   {coverImage?.title && (
@@ -124,7 +124,7 @@ export default function Education() {
             </button>
 
             <div className="p-8 md:p-12">
-              <h3 className="font-cinzel text-2xl text-text-primary tracking-wide mb-2">
+              <h3 className="font-cinzel text-2xl text-text-primary tracking-wide font-semibold mb-2">
                 {selectedCity}
               </h3>
               <div className="w-8 h-[1px] bg-gold mb-8" />

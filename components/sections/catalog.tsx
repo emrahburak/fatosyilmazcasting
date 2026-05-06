@@ -44,10 +44,10 @@ export default function Catalog() {
   return (
     <section id="catalog" ref={container} className="py-24 md:py-32 px-6 md:px-12 bg-bg">
       <div className="max-w-3xl mx-auto text-center catalog-content">
-        <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4">
+        <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
           Kadro
         </p>
-        <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide mb-6">
+        <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide font-semibold mb-6">
           Yetenek Kataloğu
         </h2>
         <p className="font-crimson text-muted leading-relaxed max-w-lg mx-auto mb-10">

@@ -68,10 +68,10 @@ export default function About() {
     <section id="about" ref={container} className="py-24 md:py-32 px-6 md:px-12 bg-bg">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4">
+          <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
             Hikaye
           </p>
-          <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide">
+          <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide font-semibold">
             Hakkımda
           </h2>
         </div>
@@ -99,7 +99,7 @@ export default function About() {
                 <span className="font-cinzel text-gold text-sm tracking-[0.16em]">
                   {item.year}
                 </span>
-                <h3 className="font-cinzel text-xl text-text-primary mt-1 mb-2">
+                <h3 className="font-cinzel text-xl text-text-primary mt-1 mb-2 font-medium">
                   {item.title}
                 </h3>
                 <p className="font-crimson text-text-secondary leading-relaxed">

@@ -26,10 +26,10 @@ export default function Contact() {
   return (
     <section id="contact" ref={container} className="py-24 md:py-32 px-6 md:px-12 bg-bg">
       <div className="max-w-2xl mx-auto text-center contact-content">
-        <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4">
+        <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
           Bağlantı
         </p>
-        <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide mb-10">
+        <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide font-semibold mb-10">
           İletişim
         </h2>
 
