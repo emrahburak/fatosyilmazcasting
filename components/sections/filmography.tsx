@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SafeImage from '@/components/shared/safe-image';
-import ProjectPosterPlaceholder from '@/components/shared/project-poster-placeholder';
 import { getMediaUrl } from '@/lib/utils/media';
 import { ProjectSchema, type Project } from '@/lib/validations/project';
 import projectsData from '@/data/projects.json';
@@ -112,10 +112,11 @@ export default function Filmography() {
                     </div>
                   </>
                 ) : (
-                  <ProjectPosterPlaceholder
-                    title={project.title}
-                    year={project.year}
-                    type={project.type}
+                  <Image
+                    src="/placeholder-poster.svg"
+                    alt={project.title}
+                    fill
+                    className="object-cover"
                   />
                 )}
               </button>
@@ -168,10 +169,11 @@ export default function Filmography() {
                   fallbackClassName="absolute inset-0"
                 />
               ) : (
-                <ProjectPosterPlaceholder
-                  title={selectedProject.title}
-                  year={selectedProject.year}
-                  type={selectedProject.type}
+                <Image
+                  src="/placeholder-poster.svg"
+                  alt={selectedProject.title}
+                  fill
+                  className="object-cover"
                 />
               )}
             </div>
