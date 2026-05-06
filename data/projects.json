@@ -1,186 +1,15 @@
 [
 	{
 		"id": "1",
-		"title": "Aşk Şarkısı 2",
-		"year": "2025",
-		"type": "TV Filmi",
-		"director": "Semra Dündar",
+		"title": "Sakin Ol",
+		"year": "2005",
+		"type": "Sinema Filmi",
+		"director": "Hakan Kurşun",
 		"production": null,
-		"fileName": null
+		"fileName": "fatosyilmazcasting-afis-sakin-ol.webp"
 	},
 	{
 		"id": "2",
-		"title": "Aşk Şarkısı 3",
-		"year": "2025",
-		"type": "TV Filmi",
-		"director": "Semra Dündar",
-		"production": null,
-		"fileName": null
-	},
-	{
-		"id": "3",
-		"title": "Constantinapol",
-		"year": "2025",
-		"type": "İran Filmi",
-		"director": "Karim Amini",
-		"production": "Oji Film",
-		"fileName": "fatosyilmazcasting-afis-constantinepole.webp"
-	},
-	{
-		"id": "4",
-		"title": "Babasının Kızı",
-		"year": "2025",
-		"type": "TV Filmi",
-		"director": "Mahmut Kaptan",
-		"production": "Statü Pictures",
-		"fileName": "fatosyilmazcasting-afis-babasinin-kizi.webp"
-	},
-	{
-		"id": "5",
-		"title": "Hırçın Kız",
-		"year": "2024",
-		"type": "Sinema Filmi",
-		"director": "Hakan Kurşun",
-		"production": "Rodi Yapım",
-		"fileName": "fatosyilmazcasting-afis-hircin-kiz.webp"
-	},
-	{
-		"id": "6",
-		"title": "Gülizar Yol Ayrımı",
-		"year": "2024",
-		"type": "Sinema Filmi",
-		"director": "Sercan Muhammet",
-		"production": "Lodos Medya Film",
-		"fileName": "fatosyilmazcasting-afis-gulizar-yolayrimi.webp"
-	},
-	{
-		"id": "7",
-		"title": "Gecenin Nakaratı",
-		"year": "2024",
-		"type": "Sinema Filmi",
-		"director": "Jale Atabey",
-		"production": "Statü Pictures",
-		"fileName": "fatosyilmazcasting-afis-gecenin-nakarati.webp"
-	},
-	{
-		"id": "8",
-		"title": "Çocuk Kalbi",
-		"year": "2024",
-		"type": "Sinema Filmi",
-		"director": "Sinan Biçici",
-		"production": "Sinan Biçici",
-		"fileName": "fatosyilmazcasting-afis-cocuk-kalbi.webp"
-	},
-	{
-		"id": "9",
-		"title": "Aşk Bağları",
-		"year": "2024",
-		"type": "Sinema Filmi",
-		"director": "Hakan Kurşun",
-		"production": "Statü Pictures",
-		"fileName": "fatosyilmazcasting-afis-ask-baglari.webp"
-	},
-	{
-		"id": "10",
-		"title": "Bozuk Para",
-		"year": "2023",
-		"type": "Sinema Filmi",
-		"director": "Mahmut Kaptan",
-		"production": "Statü Pictures",
-		"fileName": null
-	},
-	{
-		"id": "11",
-		"title": "Merkez",
-		"year": "2023",
-		"type": "Dijital Film",
-		"director": "Hakan Kurşun",
-		"production": "Statü Pictures",
-		"fileName": "fatosyilmazcasting-afis-merkez.webp"
-	},
-	{
-		"id": "12",
-		"title": "Ne Olacak Halim",
-		"year": "2023",
-		"type": "Sinema Filmi",
-		"director": "Semra Dündar",
-		"production": null,
-		"fileName": "fatosyilmazcasting-afis-ne-olacak-halim.webp"
-	},
-	{
-		"id": "13",
-		"title": "Oyun Bitti",
-		"year": "2023",
-		"type": "Sinema Filmi",
-		"director": "Gökhan Arı",
-		"production": null,
-		"fileName": "fatosyilmazcasting-afis-oyun-bitti.webp"
-	},
-	{
-		"id": "14",
-		"title": "Araf 6",
-		"year": "2023",
-		"type": "Sinema Filmi",
-		"director": "Tarık Karakulak",
-		"production": null,
-		"fileName": "fatosyilmazcasting-afis-araf-6-olum.webp"
-	},
-	{
-		"id": "15",
-		"title": "İşin Aslı",
-		"year": "2022",
-		"type": "Dijital Film",
-		"director": "Mustafa Uğur Yağcıoğlu",
-		"production": "Statü Pictures",
-		"fileName": "fatosyilmazcasting-afis-isin-asli.webp"
-	},
-	{
-		"id": "16",
-		"title": "Son Şans",
-		"year": "2022",
-		"type": "Sinema Filmi",
-		"director": "Jale Atabey",
-		"production": "Statü Pictures",
-		"fileName": "fatosyilmazcasting-afis-son-sans.webp"
-	},
-	{
-		"id": "17",
-		"title": "Stalker",
-		"year": "2022",
-		"type": "Sinema Filmi",
-		"director": "Hakan Kurşun",
-		"production": null,
-		"fileName": null
-	},
-	{
-		"id": "18",
-		"title": "Bizimkisi Bir Aşk Hikayesi",
-		"year": null,
-		"type": "Sinema Filmi",
-		"director": "Mustafa Uğur Yağcıoğlu",
-		"production": null,
-		"fileName": null
-	},
-	{
-		"id": "19",
-		"title": "Milyonda Bir",
-		"year": "2021",
-		"type": "Sinema Filmi",
-		"director": "Semra Dündar",
-		"production": null,
-		"fileName": "fatosyilmazcasting-afis-milyonda-bir.webp"
-	},
-	{
-		"id": "20",
-		"title": "Aşk Şarkısı",
-		"year": "2021",
-		"type": "TV Filmi",
-		"director": "Semra Dündar",
-		"production": null,
-		"fileName": null
-	},
-	{
-		"id": "21",
 		"title": "Vay Halime",
 		"year": "2020",
 		"type": "TV Filmi",
@@ -189,13 +18,184 @@
 		"fileName": "fatosyilmazcasting-afis-vay-halime.webp"
 	},
 	{
-		"id": "22",
-		"title": "Sakin Ol",
-		"year": "2005",
+		"id": "3",
+		"title": "Aşk Şarkısı",
+		"year": "2021",
+		"type": "TV Filmi",
+		"director": "Semra Dündar",
+		"production": null,
+		"fileName": null
+	},
+	{
+		"id": "4",
+		"title": "Milyonda Bir",
+		"year": "2021",
+		"type": "Sinema Filmi",
+		"director": "Semra Dündar",
+		"production": null,
+		"fileName": "fatosyilmazcasting-afis-milyonda-bir.webp"
+	},
+	{
+		"id": "5",
+		"title": "İşin Aslı",
+		"year": "2022",
+		"type": "Dijital Film",
+		"director": "Mustafa Uğur Yağcıoğlu",
+		"production": "Statü Pictures",
+		"fileName": "fatosyilmazcasting-afis-isin-asli.webp"
+	},
+	{
+		"id": "6",
+		"title": "Son Şans",
+		"year": "2022",
+		"type": "Sinema Filmi",
+		"director": "Jale Atabey",
+		"production": "Statü Pictures",
+		"fileName": "fatosyilmazcasting-afis-son-sans.webp"
+	},
+	{
+		"id": "7",
+		"title": "Stalker",
+		"year": "2022",
 		"type": "Sinema Filmi",
 		"director": "Hakan Kurşun",
 		"production": null,
-		"fileName": "fatosyilmazcasting-afis-sakin-ol.webp"
+		"fileName": null
+	},
+	{
+		"id": "8",
+		"title": "Araf 6",
+		"year": "2023",
+		"type": "Sinema Filmi",
+		"director": "Tarık Karakulak",
+		"production": null,
+		"fileName": "fatosyilmazcasting-afis-araf-6-olum.webp"
+	},
+	{
+		"id": "9",
+		"title": "Bozuk Para",
+		"year": "2023",
+		"type": "Sinema Filmi",
+		"director": "Mahmut Kaptan",
+		"production": "Statü Pictures",
+		"fileName": "fatosyilmazcasting-afis-bozuk-para.webp"
+	},
+	{
+		"id": "10",
+		"title": "Merkez",
+		"year": "2023",
+		"type": "Dijital Film",
+		"director": "Hakan Kurşun",
+		"production": "Statü Pictures",
+		"fileName": "fatosyilmazcasting-afis-merkez.webp"
+	},
+	{
+		"id": "11",
+		"title": "Ne Olacak Halim",
+		"year": "2023",
+		"type": "Sinema Filmi",
+		"director": "Semra Dündar",
+		"production": null,
+		"fileName": "fatosyilmazcasting-afis-ne-olacak-halim.webp"
+	},
+	{
+		"id": "12",
+		"title": "Oyun Bitti",
+		"year": "2023",
+		"type": "Sinema Filmi",
+		"director": "Gökhan Arı",
+		"production": null,
+		"fileName": "fatosyilmazcasting-afis-oyun-bitti.webp"
+	},
+	{
+		"id": "13",
+		"title": "Biricik Sevgilim",
+		"year": "2023",
+		"type": "Sinema Filmi",
+		"director": "Mustafa Uğur Yağcıoğlu",
+		"production": null,
+		"fileName": "fatosyilmazcasting-afis-biricik-sevgilim.webp"
+	},
+	{
+		"id": "14",
+		"title": "Aşk Bağları",
+		"year": "2024",
+		"type": "Sinema Filmi",
+		"director": "Hakan Kurşun",
+		"production": "Statü Pictures",
+		"fileName": "fatosyilmazcasting-afis-ask-baglari.webp"
+	},
+	{
+		"id": "15",
+		"title": "Çocuk Kalbi",
+		"year": "2024",
+		"type": "Sinema Filmi",
+		"director": "Sinan Biçici",
+		"production": "Sinan Biçici",
+		"fileName": "fatosyilmazcasting-afis-cocuk-kalbi.webp"
+	},
+	{
+		"id": "16",
+		"title": "Gecenin Nakaratı",
+		"year": "2024",
+		"type": "Sinema Filmi",
+		"director": "Jale Atabey",
+		"production": "Statü Pictures",
+		"fileName": "fatosyilmazcasting-afis-gecenin-nakarati.webp"
+	},
+	{
+		"id": "17",
+		"title": "Gülizar Yol Ayrımı",
+		"year": "2024",
+		"type": "Sinema Filmi",
+		"director": "Sercan Muhammet",
+		"production": "Lodos Medya Film",
+		"fileName": "fatosyilmazcasting-afis-gulizar-yolayrimi.webp"
+	},
+	{
+		"id": "18",
+		"title": "Hırçın Kız",
+		"year": "2024",
+		"type": "Sinema Filmi",
+		"director": "Hakan Kurşun",
+		"production": "Rodi Yapım",
+		"fileName": "fatosyilmazcasting-afis-hircin-kiz.webp"
+	},
+	{
+		"id": "19",
+		"title": "Aşk Şarkısı 2",
+		"year": "2025",
+		"type": "TV Filmi",
+		"director": "Semra Dündar",
+		"production": null,
+		"fileName": null
+	},
+	{
+		"id": "20",
+		"title": "Aşk Şarkısı 3",
+		"year": "2025",
+		"type": "TV Filmi",
+		"director": "Semra Dündar",
+		"production": null,
+		"fileName": null
+	},
+	{
+		"id": "21",
+		"title": "Babasının Kızı",
+		"year": "2025",
+		"type": "TV Filmi",
+		"director": "Mahmut Kaptan",
+		"production": "Statü Pictures",
+		"fileName": "fatosyilmazcasting-afis-babasinin-kizi.webp"
+	},
+	{
+		"id": "22",
+		"title": "Constantinapol",
+		"year": "2025",
+		"type": "İran Filmi",
+		"director": "Karim Amini",
+		"production": "Oji Film",
+		"fileName": "fatosyilmazcasting-afis-constantinepole.webp"
 	},
 	{
 		"id": "23",

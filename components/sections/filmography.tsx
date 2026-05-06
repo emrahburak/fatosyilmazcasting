@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SafeImage from '@/components/shared/safe-image';
+import ProjectPosterPlaceholder from '@/components/shared/project-poster-placeholder';
 import { getMediaUrl } from '@/lib/utils/media';
 import { ProjectSchema, type Project } from '@/lib/validations/project';
 import projectsData from '@/data/projects.json';
@@ -17,7 +18,15 @@ function parseProjects(): Project[] {
   return projectsData
     .map((p) => ProjectSchema.safeParse(p))
     .filter((r): r is { success: true; data: Project } => r.success)
-    .map((r) => r.data);
+    .map((r) => r.data)
+    .sort((a, b) => {
+      // null year goes last
+      if (!a.year && !b.year) return 0;
+      if (!a.year) return 1;
+      if (!b.year) return -1;
+      // descending: newest first
+      return parseInt(b.year, 10) - parseInt(a.year, 10);
+    });
 }
 
 export default function Filmography() {
@@ -103,14 +112,11 @@ export default function Filmography() {
                     </div>
                   </>
                 ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-bg-dark/80">
-                    <h3 className="font-cinzel text-white text-sm md:text-base tracking-wide font-medium text-center leading-tight">
-                      {project.title}
-                    </h3>
-                    <p className="font-crimson text-gold/60 text-xs mt-2">
-                      {project.year ?? '—'} · {project.type}
-                    </p>
-                  </div>
+                  <ProjectPosterPlaceholder
+                    title={project.title}
+                    year={project.year}
+                    type={project.type}
+                  />
                 )}
               </button>
             );
@@ -153,13 +159,21 @@ export default function Filmography() {
             </button>
 
             <div className="relative aspect-[3/4]">
-              <SafeImage
-                src={getMediaUrl(selectedProject.fileName, 'afis')}
-                alt={selectedProject.title}
-                fill
-                className="object-cover"
-                fallbackClassName="absolute inset-0"
-              />
+              {selectedProject.fileName ? (
+                <SafeImage
+                  src={getMediaUrl(selectedProject.fileName, 'afis')}
+                  alt={selectedProject.title}
+                  fill
+                  className="object-cover"
+                  fallbackClassName="absolute inset-0"
+                />
+              ) : (
+                <ProjectPosterPlaceholder
+                  title={selectedProject.title}
+                  year={selectedProject.year}
+                  type={selectedProject.type}
+                />
+              )}
             </div>
 
             <div className="p-8 md:p-12">
