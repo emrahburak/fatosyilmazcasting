@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     siteName: "Fatoş Yılmaz Casting",
     images: [
       {
-        url: "/fatos-yilmaz-og.png",
+        url: "/fatos-yilmaz-og.svg",
         width: 1200,
         height: 630,
-        alt: "Fatoş Yılmaz Casting",
+        alt: "Fatoş Yılmaz Management",
       },
     ],
     locale: "tr_TR",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fatoş Yılmaz Casting",
     description: "Profesyonel Cast Direktörlüğü ve Yetenek Yönetimi",
-    images: ["/fatos-yilmaz-og.png"],
+    images: ["/fatos-yilmaz-og.svg"],
   },
 };
 
