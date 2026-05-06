@@ -20,11 +20,20 @@ function parseProjects(): Project[] {
     .filter((r): r is { success: true; data: Project } => r.success)
     .map((r) => r.data)
     .sort((a, b) => {
-      // null year goes last
+      // null fileName goes last (placeholders at the end)
+      if (!a.fileName && !b.fileName) {
+        // both null fileName — sort by year
+        if (!a.year && !b.year) return 0;
+        if (!a.year) return 1;
+        if (!b.year) return -1;
+        return parseInt(b.year, 10) - parseInt(a.year, 10);
+      }
+      if (!a.fileName) return 1;
+      if (!b.fileName) return -1;
+      // both have fileName — sort by year descending
       if (!a.year && !b.year) return 0;
       if (!a.year) return 1;
       if (!b.year) return -1;
-      // descending: newest first
       return parseInt(b.year, 10) - parseInt(a.year, 10);
     });
 }
@@ -112,12 +121,23 @@ export default function Filmography() {
                     </div>
                   </>
                 ) : (
-                  <Image
-                    src="/placeholder-poster.svg"
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
+                  <>
+                    <Image
+                      src="/placeholder-poster.svg"
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-bg-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="font-cinzel text-white text-sm md:text-base tracking-wide font-medium">
+                        {project.title}
+                      </h3>
+                      <p className="font-crimson text-gold/80 text-xs mt-1">
+                        {project.year ?? '—'} · {project.type}
+                      </p>
+                    </div>
+                  </>
                 )}
               </button>
             );
