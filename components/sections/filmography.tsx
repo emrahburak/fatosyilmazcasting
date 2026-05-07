@@ -8,11 +8,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SafeImage from '@/components/shared/safe-image';
 import { getMediaUrl } from '@/lib/utils/media';
 import { ProjectSchema, type Project } from '@/lib/validations/project';
+import { useI18n } from '@/lib/i18n/context';
 import projectsData from '@/data/projects.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FEATURED_COUNT = 12;
+const FEATURED_COUNT = 9;
 
 function parseProjects(): Project[] {
   return projectsData
@@ -39,6 +40,7 @@ function parseProjects(): Project[] {
 }
 
 export default function Filmography() {
+  const { t } = useI18n();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [showAll, setShowAll] = useState(false);
   const container = useRef<HTMLDivElement>(null);
@@ -59,7 +61,7 @@ export default function Filmography() {
         y: 40,
         opacity: 0,
         duration: 0.7,
-        delay: (i % 4) * 0.1,
+        delay: (i % 3) * 0.1,
         ease: 'power3.out',
       });
     });
@@ -78,27 +80,23 @@ export default function Filmography() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
-            Seçki
+            {t('filmography.eyebrow')}
           </p>
           <h2 className="font-cinzel text-3xl md:text-4xl text-white tracking-wide font-semibold">
-            Filmografi
+            {t('filmography.title')}
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-          {displayProjects.map((project, index) => {
-            const isLarge = index === 0;
-            const isWide = index === 3 || index === 7;
+        <div className="grid grid-cols-3 gap-3 md:gap-4">
+          {displayProjects.map((project) => {
             const hasPoster = !!project.fileName;
 
             return (
               <button
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
-                className={`poster-item relative group overflow-hidden cursor-pointer bg-bg-dark/50 ${
-                  isLarge ? 'md:col-span-2 md:row-span-2' : ''
-                } ${isWide ? 'md:col-span-2' : ''}`}
-                style={{ aspectRatio: isLarge ? '1' : isWide ? '2/1' : '3/4' }}
+                className="poster-item relative group overflow-hidden cursor-pointer bg-bg-dark/50"
+                style={{ aspectRatio: '3/4' }}
               >
                 {hasPoster ? (
                   <>
@@ -106,7 +104,7 @@ export default function Filmography() {
                       src={getMediaUrl(project.fileName, 'afis')}
                       alt={project.title}
                       fill
-                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       fallbackClassName="absolute inset-0"
                     />
@@ -150,7 +148,7 @@ export default function Filmography() {
               onClick={() => setShowAll(true)}
               className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-8 py-3 hover:bg-gold/10 transition-all duration-300"
             >
-              Tüm Projeler ({remaining.length} daha)
+              {t('filmography.showAll')} ({remaining.length} {t('filmography.showAllSuffix')})
             </button>
           </div>
         )}
@@ -171,7 +169,7 @@ export default function Filmography() {
             <button
               onClick={() => setSelectedProject(null)}
               className="absolute top-6 right-6 z-10 w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
-              aria-label="Kapat"
+              aria-label={t('common.close')}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -207,20 +205,20 @@ export default function Filmography() {
               <dl className="space-y-4 font-crimson text-text-secondary">
                 <div>
                   <dt className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-gold mb-1">
-                    Yıl
+                    {t('filmography.year')}
                   </dt>
                   <dd className="text-white">{selectedProject.year ?? '—'}</dd>
                 </div>
                 <div>
                   <dt className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-gold mb-1">
-                    Tür
+                    {t('filmography.type')}
                   </dt>
                   <dd className="text-white">{selectedProject.type}</dd>
                 </div>
                 {selectedProject.director && (
                   <div>
                     <dt className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-gold mb-1">
-                      Yönetmen
+                      {t('filmography.director')}
                     </dt>
                     <dd className="text-white">{selectedProject.director}</dd>
                   </div>
@@ -228,7 +226,7 @@ export default function Filmography() {
                 {selectedProject.production && (
                   <div>
                     <dt className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-gold mb-1">
-                      Yapım Şirketi
+                      {t('filmography.production')}
                     </dt>
                     <dd className="text-white">{selectedProject.production}</dd>
                   </div>

@@ -26,7 +26,7 @@
 
 | File | Description | Priority |
 |------|-------------|----------|
-| project-intelligence/technical-domain.md | Tech stack, patterns, naming, security (v1.3) | critical |
+| project-intelligence/technical-domain.md | Tech stack, patterns, naming, security, i18n (v1.4) | critical |
 | project-intelligence/business-domain.md | Brand identity, audience, voice, business rules | critical |
 
 ---

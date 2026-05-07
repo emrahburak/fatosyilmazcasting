@@ -1,0 +1,61 @@
+{
+  "common": {
+    "logoText": "Fatoş Yılmaz",
+    "close": "Kapat"
+  },
+  "nav": {
+    "about": "Hakkımda",
+    "filmography": "Filmografi",
+    "education": "Eğitimler",
+    "catalog": "Katalog",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "name": "Fatoş Yılmaz",
+    "title": "Casting Director",
+    "scrollHint": "Keşfet",
+    "cities": "İstanbul · Zurich · Berlin · Amsterdam"
+  },
+  "about": {
+    "eyebrow": "Hikaye",
+    "title": "Hakkımda",
+    "quote": "Her karakter bir hikaye anlatır. Benim işim, o hikayeyi doğru yüzle buluşturmak.",
+    "quoteAttribution": "Fatoş Yılmaz",
+    "bio": "1978 yılında İstanbul'da doğdu. İlk ve orta öğrenimini İstanbul'da tamamladı. 2004 yılında Ay Yapım'da çalışmaya başladı. Ay Yapım'ın bünyesinde Jojo, Elma, Max ve Sinek TV'de çalıştıktan sonra freelance olarak 2019'da \"Fatoş Yılmaz Management\"ı kurdu. Cast Direktörlüğü ve menajerlik yapmaya başladı. Birçok Türk ve yabancı sinema filminin cast direktörlüğünü üstlendi. İstanbul, İsviçre, Almanya ve Hollanda'da Audition Teknikleri üzerine workshop ve atölyeler düzenledi."
+  },
+  "filmography": {
+    "eyebrow": "Seçki",
+    "title": "Filmografi",
+    "showAll": "Tüm Projeler",
+    "showAllSuffix": "daha",
+    "close": "Kapat",
+    "year": "Yıl",
+    "type": "Tür",
+    "director": "Yönetmen",
+    "production": "Yapım Şirketi"
+  },
+  "education": {
+    "eyebrow": "Atölyeler",
+    "title": "Eğitimler",
+    "description": "Uluslararası cast direktörlüğü atölyeleri ve oyuncu gelişim programları.",
+    "events": "etkinlik",
+    "close": "Kapat",
+    "comingSoon": "İçerik yakında eklenecek."
+  },
+  "catalog": {
+    "eyebrow": "Kadro",
+    "title": "Yetenek Kataloğu",
+    "description": "Bünyemizde çalışan oyuncuların cast bilgileri ve görsellerini içeren kapsamlı katalog.",
+    "viewCatalog": "Kataloğu Görüntüle",
+    "openInTab": "Yeni Sekmede Aç",
+    "download": "İndir",
+    "loading": "Katalog yükleniyor...",
+    "pdfError": "PDF görüntülenemiyor.",
+    "pdfViewerTitle": "Yetenek Kataloğu"
+  },
+  "contact": {
+    "eyebrow": "Bağlantı",
+    "title": "İletişim",
+    "copyright": "© 2026 Fatoş Yılmaz Management. Tüm hakları saklıdır."
+  }
+}

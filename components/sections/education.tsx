@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SafeImage from '@/components/shared/safe-image';
 import { getMediaUrl } from '@/lib/utils/media';
+import { useI18n } from '@/lib/i18n/context';
 import educationData from '@/data/education.json';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,6 +19,7 @@ type EducationItem = typeof educationData.education_gallery[number];
 export default function Education() {
   const [selectedCity, setSelectedCity] = useState<City | null>(null);
   const container = useRef<HTMLDivElement>(null);
+  const { t } = useI18n();
 
   const educationItems = educationData.education_gallery;
 
@@ -48,13 +50,13 @@ export default function Education() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
-            Atölyeler
+            {t('education.eyebrow')}
           </p>
           <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide font-semibold">
-            Eğitimler
+            {t('education.title')}
           </h2>
           <p className="font-crimson text-muted mt-4 max-w-lg mx-auto">
-            Uluslararası cast direktörlüğü atölyeleri ve oyuncu gelişim programları.
+            {t('education.description')}
           </p>
         </div>
 
@@ -93,7 +95,7 @@ export default function Education() {
                     </p>
                   )}
                   <p className="font-crimson text-white/50 text-xs mt-1">
-                    {items.length} etkinlik
+                    {items.length} {t('education.events')}
                   </p>
                 </div>
               </button>
@@ -115,7 +117,7 @@ export default function Education() {
             <button
               onClick={() => setSelectedCity(null)}
               className="sticky top-0 right-0 z-10 float-right m-4 w-10 h-10 flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
-              aria-label="Kapat"
+              aria-label={t('common.close')}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -129,16 +131,14 @@ export default function Education() {
               </h3>
               <div className="w-8 h-[1px] bg-gold mb-8" />
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="columns-2 md:columns-3 gap-3 space-y-3">
                 {cityGroups[selectedCity].map((item) => (
-                  <div key={item.id} className="relative aspect-square bg-muted/10">
-                    <SafeImage
+                  <div key={item.id} className="break-inside-avoid mb-3 relative group">
+                    <img
                       src={getMediaUrl(item.file_name, 'education')}
                       alt={item.title || selectedCity}
-                      fill
-                      sizes="(max-width: 768px) 50vw, 33vw"
-                      className="object-cover"
-                      fallbackClassName="absolute inset-0"
+                      className="w-full rounded-sm"
+                      loading="lazy"
                     />
                     {item.title && (
                       <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
@@ -158,7 +158,7 @@ export default function Education() {
 
               {cityGroups[selectedCity].length === 0 && (
                 <p className="font-crimson text-muted italic text-center py-12">
-                  İçerik yakında eklenecek.
+                  {t('education.comingSoon')}
                 </p>
               )}
             </div>

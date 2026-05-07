@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Crimson_Pro } from "next/font/google";
+import { I18nProvider } from "@/lib/i18n/context";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -63,7 +64,9 @@ export default function RootLayout({
         style={{ fontFamily: 'var(--font-crimson), serif' }}
         suppressHydrationWarning
       >
-        {children}
+        <I18nProvider>
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );

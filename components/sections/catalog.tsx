@@ -5,10 +5,12 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { getCatalogPdfUrl } from '@/lib/utils/media';
+import { useI18n } from '@/lib/i18n/context';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Catalog() {
+  const { t } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
   const [pdfLoaded, setPdfLoaded] = useState(false);
   const container = useRef<HTMLDivElement>(null);
@@ -45,14 +47,13 @@ export default function Catalog() {
     <section id="catalog" ref={container} className="py-24 md:py-32 px-6 md:px-12 bg-bg">
       <div className="max-w-3xl mx-auto text-center catalog-content">
         <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
-          Kadro
+          {t('catalog.eyebrow')}
         </p>
         <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide font-semibold mb-6">
-          Yetenek Kataloğu
+          {t('catalog.title')}
         </h2>
         <p className="font-crimson text-muted leading-relaxed max-w-lg mx-auto mb-10">
-          Bünyemizde çalışan oyuncuların cast bilgileri ve görsellerini içeren
-          kapsamlı katalog.
+          {t('catalog.description')}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -60,13 +61,13 @@ export default function Catalog() {
             onClick={() => setIsOpen(true)}
             className="font-cinzel text-xs tracking-[0.16em] uppercase text-bg bg-gold px-8 py-3 hover:bg-gold/80 transition-all duration-300"
           >
-            Kataloğu Görüntüle
+            {t('catalog.viewCatalog')}
           </button>
           <button
             onClick={handleOpenNewTab}
             className="font-cinzel text-xs tracking-[0.16em] uppercase text-text-secondary border border-gold/40 px-8 py-3 hover:bg-gold/10 transition-all duration-300"
           >
-            Yeni Sekmede Aç
+            {t('catalog.openInTab')}
           </button>
           <button
             onClick={handleDownload}
@@ -75,7 +76,7 @@ export default function Catalog() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M12 3v13M5 12l7 7 7-7M4 21h16" />
             </svg>
-            İndir
+            {t('catalog.download')}
           </button>
         </div>
       </div>
@@ -92,19 +93,19 @@ export default function Catalog() {
           >
             <div className="flex items-center justify-between px-6 py-3 bg-bg-dark">
               <span className="font-cinzel text-xs tracking-[0.16em] uppercase text-white">
-                Yetenek Kataloğu
+                {t('catalog.pdfViewerTitle')}
               </span>
               <div className="flex items-center gap-3">
                 <button
                   onClick={handleDownload}
                   className="text-gold/80 hover:text-gold transition-colors text-xs font-cinzel tracking-wider uppercase"
                 >
-                  İndir
+                  {t('catalog.download')}
                 </button>
                 <button
                   onClick={() => { setIsOpen(false); setPdfLoaded(false); }}
                   className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors"
-                  aria-label="Kapat"
+                  aria-label={t('common.close')}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -118,7 +119,7 @@ export default function Catalog() {
               <div className="absolute inset-0 top-[44px] bg-bg flex flex-col items-center justify-center gap-4">
                 <div className="w-8 h-8 border-2 border-gold/30 border-t-gold rounded-full animate-spin" />
                 <span className="font-cinzel text-xs tracking-[0.16em] uppercase text-muted">
-                  Katalog yükleniyor...
+                  {t('catalog.loading')}
                 </span>
               </div>
             )}
@@ -131,13 +132,13 @@ export default function Catalog() {
             >
               <div className="flex flex-col items-center justify-center h-full p-8 text-center">
                 <p className="font-crimson text-text-secondary text-lg mb-4">
-                  PDF görüntülenemiyor.
+                  {t('catalog.pdfError')}
                 </p>
                 <button
                   onClick={handleOpenNewTab}
                   className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-6 py-2 hover:bg-gold/10 transition-all"
                 >
-                  Yeni Sekmede Aç
+                  {t('catalog.openInTab')}
                 </button>
               </div>
             </object>

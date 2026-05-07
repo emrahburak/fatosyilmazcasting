@@ -1,9 +1,9 @@
-<!-- Context: project-intelligence/technical | Priority: critical | Version: 1.3 | Updated: 2026-05-06 -->
+<!-- Context: project-intelligence/technical | Priority: critical | Version: 1.4 | Updated: 2026-05-07 -->
 
 # Technical Domain
 
 **Purpose**: Tech stack, architecture, development patterns for Fatoş Yılmaz Casting.
-**Last Updated**: 2026-05-06
+**Last Updated**: 2026-05-07
 
 ## Quick Reference
 **Update Triggers**: Tech stack changes | New patterns | Architecture decisions
@@ -111,6 +111,42 @@ export const ProjectSchema = z.object({
 });
 ```
 
+## i18n Architecture
+
+**Strategy**: Static dictionary-based, zero bundle impact (no external library)
+**Locales**: `tr` (default) | `en`
+**URL Strategy**: Path prefix (`/tr`, `/en`) — SEO-first, SSG-compatible via `generateStaticParams`
+
+### Implementation
+| Layer | Pattern | Example |
+|-------|---------|---------|
+| Middleware | Locale detection + redirect | Root → `/tr` |
+| Routing | Dynamic segments | `app/[locale]/layout.tsx` |
+| Static Params | Pre-render all locales | `generateStaticParams()` → `[{locale:'tr'}, {locale:'en'}]` |
+| Metadata | Per-locale SEO | `generateMetadata(params)` |
+| Content | Server-side message loading | `/messages/{locale}.json` |
+
+### Dictionary Structure
+```json
+{
+  "nav": { "about": "...", "filmography": "..." },
+  "hero": { "title": "...", "bio": "...", "location": "..." },
+  "filmography": { "title": "...", "year": "...", "type": "...", "director": "..." },
+  "about": { "bio": "..." },
+  "contact": { "email": "...", "instagram": "..." }
+}
+```
+
+### Data Policy
+- **UI strings**: Centralized in `/messages/*.json`
+- **Content data** (`projects.json`): TR default, EN variants as optional fields (`"title_en"`)
+- **No hardcoded strings** in components
+
+### Constraints
+- SSG compatibility: All locale variants pre-rendered at build
+- SEO: `hreflang` tags, canonical URLs per locale
+- Performance: Messages loaded server-side, no client-side fetch
+
 ## Naming Conventions
 | Type | Convention | Example |
 |------|-----------|---------|
@@ -156,7 +192,9 @@ export const ProjectSchema = z.object({
 **Admin Panel**: `app/panel-admin/` — Admin route structure
 **Media Utils**: `lib/utils/media.ts` — getMediaUrl + getCatalogPdfUrl helpers
 **Data**: `/data/` — Static JSON files (education_gallery, projects)
+**i18n**: `app/[locale]/` — Dynamic locale routing, `generateStaticParams`, `generateMetadata`
+**Messages**: `/messages/` — Locale dictionaries (tr.json, en.json)
+**Middleware**: `middleware.ts` — Locale detection + root redirect
 
 ## Related Files
 - Business Domain: `project-intelligence/business-domain.md`
-- Decisions Log (example: `decisions-log.md`)

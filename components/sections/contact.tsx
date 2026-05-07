@@ -4,10 +4,12 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useI18n } from '@/lib/i18n/context';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
+  const { t } = useI18n();
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -27,10 +29,10 @@ export default function Contact() {
     <section id="contact" ref={container} className="py-24 md:py-32 px-6 md:px-12 bg-bg">
       <div className="max-w-2xl mx-auto text-center contact-content">
         <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
-          Bağlantı
+          {t('contact.eyebrow')}
         </p>
         <h2 className="font-cinzel text-3xl md:text-4xl text-text-primary tracking-wide font-semibold mb-10">
-          İletişim
+          {t('contact.title')}
         </h2>
 
         <div className="flex items-center justify-center gap-4 mb-10">
@@ -66,7 +68,7 @@ export default function Contact() {
 
         <div className="mt-20 pt-8 border-t border-gold/20">
           <p className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-muted">
-            © 2026 Fatoş Yılmaz Management. Tüm hakları saklıdır.
+            {t('contact.copyright')}
           </p>
         </div>
       </div>

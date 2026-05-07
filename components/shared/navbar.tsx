@@ -1,16 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useI18n, I18nToggle } from '@/lib/i18n/context';
 
 const navLinks = [
-  { label: 'Hakkımda', href: '#about' },
-  { label: 'Filmografi', href: '#filmography' },
-  { label: 'Eğitimler', href: '#education' },
-  { label: 'Katalog', href: '#catalog' },
-  { label: 'İletişim', href: '#contact' },
+  { label: 'nav.about', href: '#about' },
+  { label: 'nav.filmography', href: '#filmography' },
+  { label: 'nav.education', href: '#education' },
+  { label: 'nav.catalog', href: '#catalog' },
+  { label: 'nav.contact', href: '#contact' },
 ];
 
 export default function Navbar() {
+  const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -39,7 +41,7 @@ export default function Navbar() {
           onClick={(e) => handleClick(e, '#hero')}
           className="flex items-center gap-2 group"
         >
-          <svg width="28" height="28" viewBox="0 0 100 100" className="transition-transform duration-300 group-hover:scale-105">
+          <svg width="36" height="36" viewBox="0 0 100 100" className="transition-transform duration-300 group-hover:scale-105">
             <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1.5" fill="none" className="text-gold" />
             <text
               x="50%"
@@ -66,9 +68,10 @@ export default function Navbar() {
               onClick={(e) => handleClick(e, link.href)}
               className="font-cinzel text-[11px] tracking-[0.1em] uppercase text-text-secondary font-medium hover:text-gold transition-colors duration-300"
             >
-              {link.label}
+              {t(link.label)}
             </a>
           ))}
+          <I18nToggle />
         </div>
       </div>
     </nav>
