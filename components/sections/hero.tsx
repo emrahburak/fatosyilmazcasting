@@ -29,11 +29,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-bg-dark via-bg-dark/95 to-bg-dark/90" />
 
       <div className="relative z-10 text-center px-6">
-        <p className="hero-eyebrow font-cinzel text-gold text-xs tracking-[0.22em] uppercase mb-6 font-medium">
+        <p className="hero-eyebrow font-cinzel text-gold text-sm tracking-[0.22em] uppercase mb-6 font-semibold">
           {t('hero.title')}
         </p>
 
-        <h1 className="hero-name font-cinzel text-[clamp(2.4rem,7vw,5.5rem)] text-text-primary leading-tight tracking-wide font-semibold">
+        <h1 className="hero-name font-cinzel text-[clamp(3.2rem,8vw,6.5rem)] text-white leading-tight tracking-wide font-semibold">
           {t('hero.name')}
         </h1>
 
@@ -45,13 +45,13 @@ export default function Hero() {
           <div className="w-12 h-[1px] bg-gold" />
         </div>
 
-        <p className="hero-cities font-cinzel text-[11px] tracking-[0.2em] uppercase text-muted">
+        <p className="hero-cities font-cinzel text-xs tracking-[0.2em] uppercase text-white/50">
           {t('hero.cities')}
         </p>
       </div>
 
       <div className="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="font-cinzel text-[9px] tracking-[0.2em] uppercase text-muted">
+        <span className="font-cinzel text-[10px] tracking-[0.2em] uppercase text-white/50">
           {t('hero.scrollHint')}
         </span>
         <div className="w-[1px] h-8 bg-gold/60 animate-pulse" />

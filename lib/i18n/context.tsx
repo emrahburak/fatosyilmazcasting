@@ -63,11 +63,11 @@ export function useI18n() {
 export function I18nToggle() {
   const { locale, setLocale } = useI18n();
   return (
-    <div className="flex items-center gap-1 font-cinzel text-[11px] tracking-[0.1em] uppercase">
+    <div className="flex items-center gap-1 font-cinzel text-xs tracking-[0.1em] uppercase">
       <button
         type="button"
         onClick={() => setLocale('tr')}
-        className={`px-2 py-1 transition-colors duration-300 ${
+        className={`px-2 py-1 font-semibold transition-colors duration-300 ${
           locale === 'tr' ? 'text-gold' : 'text-text-secondary hover:text-gold'
         }`}
       >
@@ -77,7 +77,7 @@ export function I18nToggle() {
       <button
         type="button"
         onClick={() => setLocale('en')}
-        className={`px-2 py-1 transition-colors duration-300 ${
+        className={`px-2 py-1 font-semibold transition-colors duration-300 ${
           locale === 'en' ? 'text-gold' : 'text-text-secondary hover:text-gold'
         }`}
       >

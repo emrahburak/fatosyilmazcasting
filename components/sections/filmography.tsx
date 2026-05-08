@@ -13,7 +13,7 @@ import projectsData from '@/data/projects.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FEATURED_COUNT = 9;
+const FEATURED_COUNT = 6;
 
 function parseProjects(): Project[] {
   return projectsData
@@ -21,9 +21,7 @@ function parseProjects(): Project[] {
     .filter((r): r is { success: true; data: Project } => r.success)
     .map((r) => r.data)
     .sort((a, b) => {
-      // null fileName goes last (placeholders at the end)
       if (!a.fileName && !b.fileName) {
-        // both null fileName — sort by year
         if (!a.year && !b.year) return 0;
         if (!a.year) return 1;
         if (!b.year) return -1;
@@ -31,7 +29,6 @@ function parseProjects(): Project[] {
       }
       if (!a.fileName) return 1;
       if (!b.fileName) return -1;
-      // both have fileName — sort by year descending
       if (!a.year && !b.year) return 0;
       if (!a.year) return 1;
       if (!b.year) return -1;
@@ -45,6 +42,7 @@ export default function Filmography() {
   const [showAll, setShowAll] = useState(false);
   const container = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const allProjects = parseProjects();
   const featured = allProjects.slice(0, FEATURED_COUNT);
@@ -52,6 +50,7 @@ export default function Filmography() {
   const displayProjects = showAll ? allProjects : featured;
 
   useGSAP(() => {
+    // Initial poster reveal
     gsap.utils.toArray('.poster-item').forEach((item, i) => {
       gsap.from(item as Element, {
         scrollTrigger: {
@@ -67,6 +66,23 @@ export default function Filmography() {
     });
   }, { scope: container });
 
+  // Animate newly revealed posters on expand
+  useEffect(() => {
+    if (showAll && gridRef.current) {
+      const extraPosters = gridRef.current.querySelectorAll('.poster-item[data-extra="true"]');
+      gsap.fromTo(extraPosters,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.06,
+          ease: 'power3.out',
+        }
+      );
+    }
+  }, [showAll]);
+
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setSelectedProject(null);
@@ -77,7 +93,7 @@ export default function Filmography() {
 
   return (
     <section id="filmography" ref={container} className="py-24 md:py-32 px-6 md:px-12 bg-bg-dark">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-cinzel text-[11px] tracking-[0.2em] uppercase text-gold mb-4 font-medium">
             {t('filmography.eyebrow')}
@@ -87,16 +103,18 @@ export default function Filmography() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-3 gap-3 md:gap-4">
-          {displayProjects.map((project) => {
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+          {displayProjects.map((project, index) => {
             const hasPoster = !!project.fileName;
+            const isExtra = index >= FEATURED_COUNT;
 
             return (
               <button
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
-                className="poster-item relative group overflow-hidden cursor-pointer bg-bg-dark/50"
-                style={{ aspectRatio: '3/4' }}
+                className={`poster-item relative group overflow-hidden cursor-pointer bg-bg-dark/50 ${!showAll && index >= 3 ? 'hidden sm:block' : ''}`}
+                style={{ aspectRatio: '3/4', maxWidth: '340px', width: '100%', margin: '0 auto' }}
+                data-extra={isExtra ? 'true' : 'false'}
               >
                 {hasPoster ? (
                   <>
@@ -142,13 +160,16 @@ export default function Filmography() {
           })}
         </div>
 
-        {!showAll && remaining.length > 0 && (
+        {remaining.length > 0 && (
           <div className="text-center mt-12">
             <button
-              onClick={() => setShowAll(true)}
-              className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-8 py-3 hover:bg-gold/10 transition-all duration-300"
+              onClick={() => setShowAll(!showAll)}
+              className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-8 py-3 hover:bg-gold/10 hover:border-gold hover:shadow-[0_0_20px_rgba(201,169,110,0.1)] transition-all duration-500"
             >
-              {t('filmography.showAll')} ({remaining.length} {t('filmography.showAllSuffix')})
+              {showAll
+                ? t('filmography.collapse')
+                : `${t('filmography.showAll')} (${remaining.length})`
+              }
             </button>
           </div>
         )}

@@ -26,8 +26,9 @@
   "filmography": {
     "eyebrow": "Seçki",
     "title": "Filmografi",
-    "showAll": "Tüm Projeler",
+    "showAll": "Tüm Projeleri Göster",
     "showAllSuffix": "daha",
+    "collapse": "Seçkiyi Daralt",
     "close": "Kapat",
     "year": "Yıl",
     "type": "Tür",
@@ -37,21 +38,24 @@
   "education": {
     "eyebrow": "Atölyeler",
     "title": "Eğitimler",
-    "description": "Uluslararası cast direktörlüğü atölyeleri ve oyuncu gelişim programları.",
-    "events": "etkinlik",
+    "description": "Uluslararası cast direktörlüğü atölyeleri ve oyuncu gelişim programları. Audition Teknikleri, Oyuncu Menajerliği, Yönetmen Oyuncu İlişkisi, CV Marketing ve Kariyer Yönetimi, Sektörel Danışmanlık.",
+    "showAll": "Tümünü Göster",
+    "collapse": "Daralt",
+    "location": "Lokasyon",
     "close": "Kapat",
-    "comingSoon": "İçerik yakında eklenecek."
+    "prev": "Önceki",
+    "next": "Sonraki"
   },
   "catalog": {
     "eyebrow": "Kadro",
-    "title": "Yetenek Kataloğu",
+    "title": "Oyuncu Kataloğu",
     "description": "Bünyemizde çalışan oyuncuların cast bilgileri ve görsellerini içeren kapsamlı katalog.",
     "viewCatalog": "Kataloğu Görüntüle",
     "openInTab": "Yeni Sekmede Aç",
     "download": "İndir",
     "loading": "Katalog yükleniyor...",
     "pdfError": "PDF görüntülenemiyor.",
-    "pdfViewerTitle": "Yetenek Kataloğu"
+    "pdfViewerTitle": "Oyuncu Kataloğu"
   },
   "contact": {
     "eyebrow": "Bağlantı",

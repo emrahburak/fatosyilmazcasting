@@ -26,8 +26,9 @@
   "filmography": {
     "eyebrow": "Selection",
     "title": "Filmography",
-    "showAll": "All Projects",
+    "showAll": "Show All Projects",
     "showAllSuffix": "more",
+    "collapse": "Collapse Selection",
     "close": "Close",
     "year": "Year",
     "type": "Type",
@@ -37,10 +38,13 @@
   "education": {
     "eyebrow": "Workshops",
     "title": "Education",
-    "description": "International casting direction workshops and actor development programs.",
-    "events": "events",
+    "description": "International casting direction workshops and actor development programs. Audition Techniques, Actor Management, Director-Actor Relationship, CV Marketing and Career Management, Industry Consultation.",
+    "showAll": "Show All",
+    "collapse": "Collapse",
+    "location": "Location",
     "close": "Close",
-    "comingSoon": "Content coming soon."
+    "prev": "Previous",
+    "next": "Next"
   },
   "catalog": {
     "eyebrow": "Roster",

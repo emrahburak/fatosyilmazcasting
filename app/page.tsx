@@ -14,8 +14,8 @@ export default function Home() {
         <Hero />
         <About />
         <Filmography />
-        <Education />
         <Catalog />
+        <Education />
         <Contact />
       </main>
     </>

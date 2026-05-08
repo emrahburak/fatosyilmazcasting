@@ -3,94 +3,64 @@
 	"base_url": "",
 	"education_gallery": [
 		{
-			"id": "edu-01",
-			"file_name": "fatosyilmazcasting-education-01.webp",
-			"title": "Cast Direktörlüğü Atölyesi",
-			"location": "İstanbul",
-			"year": "2024",
-			"tags": ["atölye", "cast direktörlüğü"],
-			"description": "İstanbul'da düzenlenen cast direktörlüğü atölyesi."
-		},
-		{
 			"id": "edu-02",
 			"file_name": "fatosyilmazcasting-education-02.webp",
-			"title": "Oyuncu Gelişim Programı",
-			"location": "İstanbul",
-			"year": "2024",
-			"tags": ["eğitim", "oyuncu gelişimi"],
-			"description": "Profesyonel oyuncu gelişim ve kamera önü çalışması."
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"location": "Berlin"
 		},
 		{
 			"id": "edu-03",
 			"file_name": "fatosyilmazcasting-education-03.webp",
-			"title": "Kamera Önü Oyunculuk",
-			"location": "Zurich",
-			"year": "2023",
-			"tags": ["workshop", "kamera önü"],
-			"description": "Zurich'te uluslararası katılımcılarla kamera önü workshop."
+			"title": "KAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"location": ""
 		},
 		{
 			"id": "edu-04",
 			"file_name": "fatosyilmazcasting-education-04.webp",
-			"title": "Avrupa Cast Network",
-			"location": "Zurich",
-			"year": "2023",
-			"tags": ["network", "uluslararası"],
-			"description": "Avrupa yapım şirketleriyle cast networking etkinliği."
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ",
+			"location": "Berlin"
 		},
 		{
 			"id": "edu-05",
 			"file_name": "fatosyilmazcasting-education-05.webp",
-			"title": "Karakter Analizi Workshop",
-			"location": "Berlin",
-			"year": "2023",
-			"tags": ["workshop", "karakter analizi"],
-			"description": "Berlin Film Festivali kapsamında karakter analizi atölyesi."
+			"title": "KAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ\nZurich/Switzerland timerightproduction iş birliği",
+			"location": "Zurich"
 		},
 		{
 			"id": "edu-06",
 			"file_name": "fatosyilmazcasting-education-06.webp",
-			"title": "Dizi Oyunculuğu Masterclass",
-			"location": "Berlin",
-			"year": "2022",
-			"tags": ["masterclass", "dizi"],
-			"description": "Dizi oyunculuğu için ileri seviye masterclass."
+			"title": "KAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"location": "İstanbul"
 		},
 		{
 			"id": "edu-07",
 			"file_name": "fatosyilmazcasting-education-07.webp",
-			"title": "Uluslararası Cast Summit",
-			"location": "Amsterdam",
-			"year": "2022",
-			"tags": ["summit", "uluslararası"],
-			"description": "Amsterdam'da düzenlenen uluslararası cast direktörleri zirvesi."
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"location": "Berlin"
 		},
 		{
 			"id": "edu-08",
 			"file_name": "fatosyilmazcasting-education-08.webp",
-			"title": "Türk-Avrupa Ortak Yapım Workshop",
-			"location": "Amsterdam",
-			"year": "2022",
-			"tags": ["workshop", "ortak yapım"],
-			"description": "Türk ve Avrupa yapım şirketleri için ortak cast workshop."
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ\nİlker AKSUM · Ömer Faruk SORAK · Onur TAN · Fatoş YILMAZ",
+			"location": "Berlin"
 		},
 		{
 			"id": "edu-09",
 			"file_name": "fatosyilmazcasting-education-09.webp",
-			"title": "Genç Yetenekler Programı",
-			"location": "İstanbul",
-			"year": "2024",
-			"tags": ["genç yetenek", "program"],
-			"description": "Yeni mezun oyuncular için kariyer geliştirme programı."
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"location": "Berlin"
 		},
 		{
 			"id": "edu-10",
 			"file_name": "fatosyilmazcasting-education-10.webp",
-			"title": "Sinema Oyunculuğu Atölyesi",
-			"location": "İstanbul",
-			"year": "2023",
-			"tags": ["atölye", "sinema"],
-			"description": "Sinema oyunculuğu için ileri seviye uygulama atölyesi."
+			"title": "İSVİÇRE MAYA KULT VEREIN\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"location": "İsviçre"
+		},
+		{
+			"id": "edu-11",
+			"file_name": "fatosyilmazcasting-education-11.webp",
+			"title": "İSVİÇRE MAYA KULT VEREIN\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"location": "İsviçre"
 		}
 	]
 }
