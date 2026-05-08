@@ -164,7 +164,7 @@ export default function Filmography() {
           <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-8 py-3 hover:bg-gold/10 hover:border-gold hover:shadow-[0_0_20px_rgba(201,169,110,0.1)] transition-all duration-500"
+              className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-8 py-3 hover:bg-gold/10 hover:border-gold hover:shadow-[0_0_20px_rgba(201,169,110,0.1)] transition-all duration-500 cursor-pointer"
             >
               {showAll
                 ? t('filmography.collapse')
@@ -189,10 +189,10 @@ export default function Filmography() {
           >
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-6 right-6 z-10 w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white active:scale-95 hover:bg-white/20 hover:border-white/40 transition-all duration-300"
               aria-label={t('common.close')}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>

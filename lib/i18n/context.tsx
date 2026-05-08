@@ -67,7 +67,7 @@ export function I18nToggle() {
       <button
         type="button"
         onClick={() => setLocale('tr')}
-        className={`px-2 py-1 font-semibold transition-colors duration-300 ${
+        className={`px-2 py-1 font-semibold transition-colors duration-300 cursor-pointer ${
           locale === 'tr' ? 'text-gold' : 'text-text-secondary hover:text-gold'
         }`}
       >
@@ -77,7 +77,7 @@ export function I18nToggle() {
       <button
         type="button"
         onClick={() => setLocale('en')}
-        className={`px-2 py-1 font-semibold transition-colors duration-300 ${
+        className={`px-2 py-1 font-semibold transition-colors duration-300 cursor-pointer ${
           locale === 'en' ? 'text-gold' : 'text-text-secondary hover:text-gold'
         }`}
       >

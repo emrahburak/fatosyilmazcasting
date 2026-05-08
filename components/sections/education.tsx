@@ -16,9 +16,14 @@ const FEATURED_COUNT = 6;
 type EducationItem = typeof educationData.education_gallery[number];
 
 export default function Education() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [showAll, setShowAll] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+  const [swipeHintShown, setSwipeHintShown] = useState(false);
+  const [slideDirection, setSlideDirection] = useState(0);
+  const slideRef = useRef<HTMLDivElement>(null);
   const container = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -33,13 +38,46 @@ export default function Education() {
 
   const goNext = useCallback(() => {
     if (currentIndex === null) return;
+    setSlideDirection(1);
     setCurrentIndex((currentIndex + 1) % allItems.length);
   }, [currentIndex, allItems.length]);
 
   const goPrev = useCallback(() => {
     if (currentIndex === null) return;
+    setSlideDirection(-1);
     setCurrentIndex((currentIndex - 1 + allItems.length) % allItems.length);
   }, [currentIndex, allItems.length]);
+
+  const goToIndex = useCallback((newIndex: number) => {
+    if (currentIndex === null || newIndex === currentIndex) return;
+    setSlideDirection(newIndex > currentIndex ? 1 : -1);
+    setCurrentIndex(newIndex);
+  }, [currentIndex]);
+
+  const getTitle = (item: EducationItem) =>
+    locale === 'en' ? (item.title_en || item.title) : item.title;
+
+  const getLocation = (item: EducationItem) =>
+    locale === 'en' ? (item.location_en || item.location) : item.location;
+
+  const SWIPE_THRESHOLD = 50;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) < SWIPE_THRESHOLD) return;
+    if (diff > 0) goNext();
+    else goPrev();
+    setTouchStartX(0);
+    setTouchEndX(0);
+  };
 
   useGSAP(() => {
     gsap.utils.toArray('.edu-item').forEach((item, i) => {
@@ -83,6 +121,49 @@ export default function Education() {
     }
   }, [currentIndex]);
 
+  // Swipe hint animation — plays once on first modal open
+  useEffect(() => {
+    if (currentIndex !== null && !swipeHintShown && slideRef.current) {
+      setSwipeHintShown(true);
+      gsap.fromTo(slideRef.current,
+        { x: 0 },
+        {
+          x: 15,
+          duration: 0.35,
+          ease: 'power2.out',
+          onComplete: () => {
+            gsap.to(slideRef.current, {
+              x: -15,
+              duration: 0.35,
+              ease: 'power2.out',
+              onComplete: () => {
+                gsap.to(slideRef.current, {
+                  x: 0,
+                  duration: 0.3,
+                  ease: 'power2.out',
+                });
+              },
+            });
+          },
+        }
+      );
+    }
+  }, [currentIndex, swipeHintShown]);
+
+  // Slide transition animation
+  useEffect(() => {
+    if (slideDirection === 0 || !slideRef.current) return;
+    gsap.fromTo(slideRef.current,
+      { x: `${slideDirection * 100}%` },
+      {
+        x: '0%',
+        duration: 0.35,
+        ease: 'power3.out',
+        onComplete: () => setSlideDirection(0),
+      }
+    );
+  }, [currentIndex, slideDirection]);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -124,7 +205,7 @@ export default function Education() {
               >
                 <SafeImage
                   src={getMediaUrl(item.file_name, 'education')}
-                  alt={item.title || 'Education'}
+                  alt={getTitle(item) || 'Education'}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -133,11 +214,11 @@ export default function Education() {
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-bg-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <h3 className="font-cinzel text-white text-sm md:text-base tracking-wide font-medium whitespace-pre-line">
-                    {item.title}
+                    {getTitle(item)}
                   </h3>
-                  {item.location && (
+                  {getLocation(item) && (
                     <p className="font-crimson text-gold/80 text-xs mt-1">
-                      {item.location}
+                      {getLocation(item)}
                     </p>
                   )}
                 </div>
@@ -150,7 +231,7 @@ export default function Education() {
           <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-8 py-3 hover:bg-gold/10 hover:border-gold hover:shadow-[0_0_20px_rgba(201,169,110,0.1)] transition-all duration-500"
+              className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-8 py-3 hover:bg-gold/10 hover:border-gold hover:shadow-[0_0_20px_rgba(201,169,110,0.1)] transition-all duration-500 cursor-pointer"
             >
               {showAll
                 ? t('education.collapse')
@@ -178,43 +259,33 @@ export default function Education() {
             {/* Close button */}
             <button
               onClick={() => setCurrentIndex(null)}
-              className="absolute top-3 right-3 z-20 w-9 h-9 flex items-center justify-center text-bg-dark/50 hover:text-bg-dark transition-colors"
+              className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm border border-bg-dark/20 flex items-center justify-center text-bg-dark active:scale-95 hover:bg-white/80 hover:border-bg-dark/40 transition-all duration-300"
               aria-label={t('common.close')}
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </button>
 
             {/* Image area */}
-            <div className="relative flex-1 min-h-0">
-              {/* Mobile arrows - overlay on image */}
-              <button
-                onClick={goPrev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 z-10 sm:hidden w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center text-white active:scale-95 transition-transform"
-                aria-label={t('education.prev')}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <polyline points="15 18 9 12 15 6" />
-                </svg>
-              </button>
-
-              <button
-                onClick={goNext}
-                className="absolute right-3 top-1/2 -translate-y-1/2 z-10 sm:hidden w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center text-white active:scale-95 transition-transform"
-                aria-label={t('education.next')}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
+            <div className="relative flex-1 min-h-0 md:pt-5">
+              {/* Edge gradient hints — "there's more" */}
+              <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black/15 to-transparent pointer-events-none z-10 sm:hidden" />
+              <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black/15 to-transparent pointer-events-none z-10 sm:hidden" />
 
               {/* Image - absolute fill on mobile */}
-              <div className="absolute inset-0 sm:relative sm:inset-auto sm:aspect-[16/9]">
+              <div
+                ref={slideRef}
+                className="absolute inset-0 sm:relative sm:inset-auto sm:aspect-[16/9]"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
                 <SafeImage
+                  key={currentIndex}
                   src={getMediaUrl(currentItem.file_name, 'education')}
-                  alt={currentItem.title || 'Education'}
+                  alt={getTitle(currentItem) || 'Education'}
                   fill
                   className="object-contain bg-[#f5f0e8]"
                   sizes="(max-width: 640px) 100vw, 80vw"
@@ -243,16 +314,16 @@ export default function Education() {
               </button>
             </div>
 
-            {/* Info */}
+            {/* Info — directly below image */}
             <div className="px-5 py-4 md:px-8 md:py-5 flex-shrink-0">
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
                   <h3 className="font-cinzel text-sm md:text-base text-bg-dark tracking-wide font-semibold whitespace-pre-line leading-snug">
-                    {currentItem.title}
+                    {getTitle(currentItem)}
                   </h3>
-                  {currentItem.location && (
+                  {getLocation(currentItem) && (
                     <p className="font-crimson text-gold/80 text-xs mt-1">
-                      {currentItem.location}
+                      {getLocation(currentItem)}
                     </p>
                   )}
                 </div>
@@ -260,6 +331,21 @@ export default function Education() {
                   {currentIndex + 1} / {allItems.length}
                 </p>
               </div>
+            </div>
+
+            {/* Dot indicators — below info on mobile */}
+            <div className="flex items-center justify-center gap-1.5 pb-4 sm:hidden">
+              {allItems.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goToIndex(i)}
+                  className={`block h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    i === currentIndex
+                      ? 'w-5 bg-gold'
+                      : 'w-1.5 bg-bg-dark/20'
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>

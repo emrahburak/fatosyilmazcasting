@@ -59,19 +59,19 @@ export default function Catalog() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={() => setIsOpen(true)}
-            className="font-cinzel text-xs tracking-[0.16em] uppercase text-bg bg-gold px-8 py-3 hover:bg-gold/80 transition-all duration-300"
+            className="font-cinzel text-xs tracking-[0.16em] uppercase text-bg bg-gold px-8 py-3 hover:bg-gold/80 transition-all duration-300 cursor-pointer"
           >
             {t('catalog.viewCatalog')}
           </button>
           <button
             onClick={handleOpenNewTab}
-            className="font-cinzel text-xs tracking-[0.16em] uppercase text-text-secondary border border-gold/40 px-8 py-3 hover:bg-gold/10 transition-all duration-300"
+            className="font-cinzel text-xs tracking-[0.16em] uppercase text-text-secondary border border-gold/40 px-8 py-3 hover:bg-gold/10 transition-all duration-300 cursor-pointer"
           >
             {t('catalog.openInTab')}
           </button>
           <button
             onClick={handleDownload}
-            className="font-cinzel text-xs tracking-[0.16em] uppercase text-muted px-8 py-3 hover:text-gold transition-colors duration-300 flex items-center gap-2"
+            className="font-cinzel text-xs tracking-[0.16em] uppercase text-muted px-8 py-3 hover:text-gold transition-colors duration-300 flex items-center gap-2 cursor-pointer"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M12 3v13M5 12l7 7 7-7M4 21h16" />
@@ -98,13 +98,13 @@ export default function Catalog() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={handleDownload}
-                  className="text-gold/80 hover:text-gold transition-colors text-xs font-cinzel tracking-wider uppercase"
+                  className="text-gold/80 hover:text-gold transition-colors text-xs font-cinzel tracking-wider uppercase cursor-pointer"
                 >
                   {t('catalog.download')}
                 </button>
                 <button
                   onClick={() => { setIsOpen(false); setPdfLoaded(false); }}
-                  className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                  className="w-8 h-8 flex items-center justify-center text-white/60 hover:text-white transition-colors cursor-pointer"
                   aria-label={t('common.close')}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -136,7 +136,7 @@ export default function Catalog() {
                 </p>
                 <button
                   onClick={handleOpenNewTab}
-                  className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-6 py-2 hover:bg-gold/10 transition-all"
+                  className="font-cinzel text-xs tracking-[0.16em] uppercase text-gold border border-gold/40 px-6 py-2 hover:bg-gold/10 transition-all cursor-pointer"
                 >
                   {t('catalog.openInTab')}
                 </button>

@@ -48,19 +48,19 @@ export default function Contact() {
             href="https://www.instagram.com/fatosyilmazmanagement/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 font-crimson text-text-secondary hover:text-gold transition-colors duration-300 group"
+            className="inline-flex items-center gap-3 font-crimson text-xl text-text-secondary hover:text-gold transition-colors duration-300 group"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:text-gold transition-colors">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:text-gold transition-colors">
               <rect x="2" y="2" width="20" height="20" rx="5" />
               <circle cx="12" cy="12" r="5" />
               <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
             </svg>
-            <span className="text-lg">@fatosyilmazmanagement</span>
+            <span>@fatosyilmazmanagement</span>
           </a>
 
           <a
             href="mailto:info@fatosyilmazcasting.com"
-            className="block font-crimson text-text-secondary hover:text-gold transition-colors duration-300"
+            className="block font-crimson text-xl text-text-secondary hover:text-gold transition-colors duration-300"
           >
             info@fatosyilmazcasting.com
           </a>
@@ -70,6 +70,14 @@ export default function Contact() {
           <p className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-muted">
             {t('contact.copyright')}
           </p>
+          <a
+            href="https://github.com/emrahburak"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 block font-cinzel text-[11px] tracking-wider text-muted/40 hover:text-bg-dark transition-colors duration-300"
+          >
+            developed by emrahburak
+          </a>
         </div>
       </div>
     </section>
