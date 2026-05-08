@@ -1,0 +1,65 @@
+{
+  "common": {
+    "logoText": "Fatoş Yılmaz",
+    "close": "Close"
+  },
+  "nav": {
+    "about": "About",
+    "filmography": "Filmography",
+    "education": "Education",
+    "catalog": "Catalog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "Fatoş Yılmaz",
+    "title": "Casting Director",
+    "scrollHint": "Discover",
+    "cities": "Istanbul · Zurich · Berlin · Amsterdam"
+  },
+  "about": {
+    "eyebrow": "Story",
+    "title": "About",
+    "quote": "Every character tells a story. My job is to match that story with the right face.",
+    "quoteAttribution": "Fatoş Yılmaz",
+    "bio": "Born in Istanbul in 1978. She completed her primary and secondary education in Istanbul. She began working at Ay Yapım in 2004. After working at Jojo, Elma, Max and Sinek TV within Ay Yapım, she founded \"Fatoş Yılmaz Management\" as a freelancer in 2019. She began working as a Casting Director and manager. She served as casting director for numerous Turkish and international feature films. She organized workshops and studios on Audition Techniques in Istanbul, Switzerland, Germany and the Netherlands."
+  },
+  "filmography": {
+    "eyebrow": "Selection",
+    "title": "Filmography",
+    "showAll": "Show All Projects",
+    "showAllSuffix": "more",
+    "collapse": "Collapse Selection",
+    "close": "Close",
+    "year": "Year",
+    "type": "Type",
+    "director": "Director",
+    "production": "Production Company"
+  },
+  "education": {
+    "eyebrow": "Workshops",
+    "title": "Education",
+    "description": "International casting direction workshops and actor development programs. Audition Techniques, Actor Management, Director-Actor Relationship, CV Marketing and Career Management, Industry Consultation.",
+    "showAll": "Show All",
+    "collapse": "Collapse",
+    "location": "Location",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "catalog": {
+    "eyebrow": "Roster",
+    "title": "Talent Catalog",
+    "description": "A comprehensive catalog containing casting details and visuals of actors in our roster.",
+    "viewCatalog": "View Catalog",
+    "openInTab": "Open in New Tab",
+    "download": "Download",
+    "loading": "Loading catalog...",
+    "pdfError": "PDF cannot be displayed.",
+    "pdfViewerTitle": "Talent Catalog"
+  },
+  "contact": {
+    "eyebrow": "Connect",
+    "title": "Contact",
+    "copyright": "© 2026 Fatoş Yılmaz Management. All rights reserved."
+  }
+}

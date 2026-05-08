@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cinzel, Crimson_Pro } from "next/font/google";
+import { I18nProvider } from "@/lib/i18n/context";
 import "./globals.css";
 
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cinzel",
+});
 
-
-
+const crimsonPro = Crimson_Pro({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-crimson",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fatosyilmazcasting.com'),
-  title: "Fatoş Yılmaz Management & Casting | Cast Direktörü",
-  description: "Fatoş Yılmaz yönetiminde profesyonel cast direktörlüğü ve menajerlik.",
-  // Google doğrulaması buraya geliyor:
+  title: "Fatoş Yılmaz Casting | Cast Direktörü",
+  description: "20+ yıllık deneyimle sinema ve dizi projeleri için profesyonel cast direktörlüğü. İstanbul, Zurich, Berlin, Amsterdam.",
+  alternates: {
+    canonical: '/',
+  },
   verification: {
     google: "BRajwJY_IgCASV694ckVHfXMpksqz1xb8b5Yb8VOtkU",
   },
@@ -18,16 +29,16 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Fatoş Yılmaz Management & Casting",
-    description: "Profesyonel Yetenek Yönetimi ve Cast Direktörlüğü",
+    title: "Fatoş Yılmaz Casting",
+    description: "Profesyonel Cast Direktörlüğü ve Yetenek Yönetimi",
     url: "https://fatosyilmazcasting.com",
     siteName: "Fatoş Yılmaz Casting",
     images: [
       {
-        url: "/fatos-yilmaz-og.png", // Başına https eklemene gerek kalmaz, metadataBase halleder
+        url: "/fatos-yilmaz-og.svg",
         width: 1200,
         height: 630,
-        alt: "Fatoş Yılmaz Management & Casting Logo",
+        alt: "Fatoş Yılmaz Management",
       },
     ],
     locale: "tr_TR",
@@ -35,23 +46,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fatoş Yılmaz Management & Casting",
-    description: "Profesyonel Yetenek Yönetimi ve Cast Direktörlüğü",
-    images: ["/fatos-yilmaz-og.png"],
+    title: "Fatoş Yılmaz Casting",
+    description: "Profesyonel Cast Direktörlüğü ve Yetenek Yönetimi",
+    images: ["/fatos-yilmaz-og.svg"],
   },
 };
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-
 
 export default function RootLayout({
   children,
@@ -59,12 +58,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning={true} // Bu satırı ekle
+        className={`${cinzel.variable} ${crimsonPro.variable} antialiased`}
+        style={{ fontFamily: 'var(--font-crimson), serif' }}
+        suppressHydrationWarning
       >
-        {children}
+        <I18nProvider>
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&amp;display=swap');
+      .brand { font-family: 'Cinzel', serif; font-size: 48px; font-weight: 600; fill: #c9a96e; letter-spacing: 6px; }
+      .sub { font-family: 'Cinzel', serif; font-size: 22px; font-weight: 400; fill: #c9a96e; letter-spacing: 5px; opacity: 0.7; }
+      .muted { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 400; fill: #8a8278; letter-spacing: 3px; }
+      .icon { fill: none; stroke: #c9a96e; stroke-width: 1; opacity: 0.3; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="800" fill="#1a1a1a"/>
+
+  <!-- Subtle gold border frame -->
+  <rect x="30" y="30" width="540" height="740" fill="none" stroke="#c9a96e" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Film reel icon (decorative, top-center) -->
+  <g transform="translate(300, 160)" class="icon">
+    <circle cx="0" cy="0" r="28"/>
+    <circle cx="0" cy="0" r="18"/>
+    <circle cx="0" cy="0" r="5" fill="#c9a96e" opacity="0.3" stroke="none"/>
+    <!-- Film strip holes -->
+    <circle cx="-18" cy="-18" r="3" fill="#c9a96e" opacity="0.2" stroke="none"/>
+    <circle cx="18" cy="-18" r="3" fill="#c9a96e" opacity="0.2" stroke="none"/>
+    <circle cx="-18" cy="18" r="3" fill="#c9a96e" opacity="0.2" stroke="none"/>
+    <circle cx="18" cy="18" r="3" fill="#c9a96e" opacity="0.2" stroke="none"/>
+    <circle cx="0" cy="-22" r="3" fill="#c9a96e" opacity="0.2" stroke="none"/>
+    <circle cx="0" cy="22" r="3" fill="#c9a96e" opacity="0.2" stroke="none"/>
+    <circle cx="-22" cy="0" r="3" fill="#c9a96e" opacity="0.2" stroke="none"/>
+    <circle cx="22" cy="0" r="3" fill="#c9a96e" opacity="0.2" stroke="none"/>
+  </g>
+
+  <!-- Brand Name -->
+  <text x="300" y="260" text-anchor="middle" class="brand">FATOŞ YILMAZ</text>
+  <text x="300" y="300" text-anchor="middle" class="sub">MANAGEMENT</text>
+
+  <!-- Separator line with center dot -->
+  <line x1="220" y1="340" x2="275" y2="340" stroke="#c9a96e" stroke-width="0.8" opacity="0.6"/>
+  <circle cx="300" cy="340" r="3" fill="#c9a96e" opacity="0.8"/>
+  <line x1="325" y1="340" x2="380" y2="340" stroke="#c9a96e" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Placeholder message -->
+  <text x="300" y="410" text-anchor="middle" class="muted">Film Afişi</text>
+  <text x="300" y="445" text-anchor="middle" class="muted">Yakında</text>
+
+  <!-- Bottom decorative separator -->
+  <line x1="260" y1="680" x2="290" y2="680" stroke="#c9a96e" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="300" cy="680" r="1.5" fill="#c9a96e" opacity="0.4"/>
+  <line x1="310" y1="680" x2="340" y2="680" stroke="#c9a96e" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Bottom text -->
+  <text x="300" y="715" text-anchor="middle" class="muted" style="font-size: 10px; opacity: 0.5;">@fatosyilmazmanagement</text>
+</svg>

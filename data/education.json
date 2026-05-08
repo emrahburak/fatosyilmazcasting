@@ -1,0 +1,86 @@
+{
+	"project": "Fatos Yilmaz Management",
+	"base_url": "",
+	"education_gallery": [
+		{
+			"id": "edu-02",
+			"file_name": "fatosyilmazcasting-education-02.webp",
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"title_en": "BERLIN FENERBAHCE ASSOCIATION\nCAMERA ACTING & AUDITION WORKSHOP",
+			"location": "Berlin",
+			"location_en": "Berlin"
+		},
+		{
+			"id": "edu-03",
+			"file_name": "fatosyilmazcasting-education-03.webp",
+			"title": "KAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"title_en": "CAMERA ACTING & AUDITION WORKSHOP",
+			"location": "",
+			"location_en": ""
+		},
+		{
+			"id": "edu-04",
+			"file_name": "fatosyilmazcasting-education-04.webp",
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ",
+			"title_en": "BERLIN FENERBAHCE ASSOCIATION",
+			"location": "Berlin",
+			"location_en": "Berlin"
+		},
+		{
+			"id": "edu-05",
+			"file_name": "fatosyilmazcasting-education-05.webp",
+			"title": "KAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ\nZurich/Switzerland timerightproduction iş birliği",
+			"title_en": "CAMERA ACTING & AUDITION WORKSHOP\nZurich/Switzerland in collaboration with timerightproduction",
+			"location": "Zurich",
+			"location_en": "Zurich"
+		},
+		{
+			"id": "edu-06",
+			"file_name": "fatosyilmazcasting-education-06.webp",
+			"title": "KAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"title_en": "CAMERA ACTING & AUDITION WORKSHOP",
+			"location": "İstanbul",
+			"location_en": "Istanbul"
+		},
+		{
+			"id": "edu-07",
+			"file_name": "fatosyilmazcasting-education-07.webp",
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"title_en": "BERLIN FENERBAHCE ASSOCIATION\nCAMERA ACTING & AUDITION WORKSHOP",
+			"location": "Berlin",
+			"location_en": "Berlin"
+		},
+		{
+			"id": "edu-08",
+			"file_name": "fatosyilmazcasting-education-08.webp",
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ\nİlker AKSUM · Ömer Faruk SORAK · Onur TAN · Fatoş YILMAZ",
+			"title_en": "BERLIN FENERBAHCE ASSOCIATION\nCAMERA ACTING & AUDITION WORKSHOP\nİlker AKSUM · Ömer Faruk SORAK · Onur TAN · Fatoş YILMAZ",
+			"location": "Berlin",
+			"location_en": "Berlin"
+		},
+		{
+			"id": "edu-09",
+			"file_name": "fatosyilmazcasting-education-09.webp",
+			"title": "BERLİN FENERBAHÇELİLER DERNEĞİ\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"title_en": "BERLIN FENERBAHCE ASSOCIATION\nCAMERA ACTING & AUDITION WORKSHOP",
+			"location": "Berlin",
+			"location_en": "Berlin"
+		},
+		{
+			"id": "edu-10",
+			"file_name": "fatosyilmazcasting-education-10.webp",
+			"title": "İSVİÇRE MAYA KULT VEREIN\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"title_en": "SWITZERLAND MAYA KULT VEREIN\nCAMERA ACTING & AUDITION WORKSHOP",
+			"location": "İsviçre",
+			"location_en": "Switzerland"
+		},
+		{
+			"id": "edu-11",
+			"file_name": "fatosyilmazcasting-education-11.webp",
+			"title": "İSVİÇRE MAYA KULT VEREIN\nKAMERA ÖNÜ OYUNCULUK VE AUDITION ATÖLYESİ",
+			"title_en": "SWITZERLAND MAYA KULT VEREIN\nCAMERA ACTING & AUDITION WORKSHOP",
+			"location": "İsviçre",
+			"location_en": "Switzerland"
+		}
+	]
+}
