@@ -43,27 +43,38 @@ export default function Contact() {
           <div className="w-16 h-[1px] bg-gold/40" />
         </div>
 
-        <div className="space-y-6">
-          <a
-            href="https://www.instagram.com/fatosyilmazmanagement/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 font-crimson text-xl text-text-secondary hover:text-gold transition-colors duration-300 group"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:text-gold transition-colors">
-              <rect x="2" y="2" width="20" height="20" rx="5" />
-              <circle cx="12" cy="12" r="5" />
-              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
-            </svg>
-            <span>@fatosyilmazmanagement</span>
-          </a>
+        {/* Logo left, contact info right */}
+        <div className="flex flex-col md:flex-row items-start justify-center gap-8 md:gap-12">
+          <div className="flex-shrink-0">
+            <img
+              src="/fatosyilmaz-casting-canva.svg"
+              alt="Fatoş Yılmaz Casting Logo"
+              className="w-24 h-24 md:w-28 md:h-28"
+            />
+          </div>
 
-          <a
-            href="mailto:info@fatosyilmazcasting.com"
-            className="block font-crimson text-xl text-text-secondary hover:text-gold transition-colors duration-300"
-          >
-            info@fatosyilmazcasting.com
-          </a>
+          <div className="space-y-6 text-center md:text-left">
+            <a
+              href="https://www.instagram.com/fatosyilmazmanagement/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 font-crimson text-xl text-text-secondary hover:text-gold transition-colors duration-300 group"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="group-hover:text-gold transition-colors">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+              </svg>
+              <span>@fatosyilmazmanagement</span>
+            </a>
+
+            <a
+              href="mailto:info@fatosyilmazcasting.com"
+              className="block font-crimson text-xl text-text-secondary hover:text-gold transition-colors duration-300"
+            >
+              info@fatosyilmazcasting.com
+            </a>
+          </div>
         </div>
 
         <div className="mt-20 pt-8 border-t border-gold/20">

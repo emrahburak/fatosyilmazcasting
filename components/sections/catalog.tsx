@@ -59,7 +59,7 @@ export default function Catalog() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={() => setIsOpen(true)}
-            className="font-cinzel text-xs tracking-[0.16em] uppercase text-bg bg-gold px-8 py-3 hover:bg-gold/80 transition-all duration-300 cursor-pointer"
+            className="hidden sm:block font-cinzel text-xs tracking-[0.16em] uppercase text-bg bg-gold px-8 py-3 hover:bg-gold/80 transition-all duration-300 cursor-pointer"
           >
             {t('catalog.viewCatalog')}
           </button>
