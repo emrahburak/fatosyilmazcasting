@@ -44,7 +44,7 @@ export default function Contact() {
         </div>
 
         {/* Logo left, contact info right */}
-        <div className="flex flex-col md:flex-row items-start justify-center gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-12">
           <div className="flex-shrink-0">
             <img
               src="/fatosyilmaz-casting-canva.svg"
