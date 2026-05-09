@@ -60,6 +60,58 @@
   "contact": {
     "eyebrow": "Bağlantı",
     "title": "İletişim",
-    "copyright": "© 2026 Fatoş Yılmaz Management. Tüm hakları saklıdır."
+    "copyright": "© 2026 Fatoş Yılmaz Management. Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası"
+  },
+  "privacy": {
+    "title": "Gizlilik Politikası ve KVKK Aydınlatma Metni",
+    "lastUpdated": "Son güncelleme",
+    "intro": "Fatoş Yılmaz Management olarak, kişisel verilerinizin korunmasına önem veriyoruz. Bu gizlilik politikası, fatosyilmazcasting.com web sitemizi ziyaret ettiğinizde hangi verilerin toplandığını ve nasıl işlendiğini açıklamaktadır.",
+    "sections": {
+      "collected": {
+        "title": "Toplanan Veriler",
+        "items": [
+          "IP adresi (sunucu erişim logları aracılığıyla)",
+          "Tarayıcı türü ve sürümü",
+          "İşletim sistemi bilgisi",
+          "Erişim tarihi ve saati",
+          "Ziyaret edilen sayfalar"
+        ]
+      },
+      "purpose": {
+        "title": "Verilerin İşlenme Amacı",
+        "items": [
+          "Web sitesinin güvenli ve sorunsuz çalışmasını sağlamak",
+          "Teknik sorunları tespit etmek ve gidermek",
+          "Yasal yükümlülüklere uymak",
+          "Site performansını analiz etmek"
+        ]
+      },
+      "thirdParty": {
+        "title": "Üçüncü Taraf Hizmetler",
+        "items": [
+          "Google Fonts — Yazı tiplerinin yüklenmesi için",
+          "Cloudflare — DNS ve güvenlik altyapısı için",
+          "CDN (cdn.timerightproduction.org) — Görsel ve medya dosyalarının sunumu için"
+        ]
+      },
+      "cookies": {
+        "title": "Çerez Politikası",
+        "text": "Web sitemiz yalnızca teknik olarak zorunlu çerezleri kullanmaktadır. Takip, analiz veya pazarlama amaçlı çerez kullanılmamaktadır. Form, kayıt veya veri toplama aracı bulunmamaktadır."
+      },
+      "rights": {
+        "title": "KVKK Kapsamındaki Haklarınız",
+        "items": [
+          "Kişisel verilerinizin işlenip işlenmediğini öğrenme",
+          "Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme",
+          "Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme",
+          "Kişisel verilerinizin silinmesini veya yok edilmesini talep etme"
+        ]
+      },
+      "contact": {
+        "title": "İletişim",
+        "text": "KVKK kapsamındaki haklarınızı kullanmak veya gizlilik politikamız hakkında soru sormak için bizimle iletişime geçebilirsiniz:"
+      }
+    }
   }
 }

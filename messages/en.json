@@ -60,6 +60,58 @@
   "contact": {
     "eyebrow": "Connect",
     "title": "Contact",
-    "copyright": "© 2026 Fatoş Yılmaz Management. All rights reserved."
+    "copyright": "© 2026 Fatoş Yılmaz Management. All rights reserved.",
+    "privacy": "Privacy Policy"
+  },
+  "privacy": {
+    "title": "Privacy Policy & KVKK Disclosure",
+    "lastUpdated": "Last updated",
+    "intro": "At Fatoş Yılmaz Management, we take the protection of your personal data seriously. This privacy policy explains what data is collected and how it is processed when you visit our website at fatosyilmazcasting.com.",
+    "sections": {
+      "collected": {
+        "title": "Data Collected",
+        "items": [
+          "IP address (via server access logs)",
+          "Browser type and version",
+          "Operating system information",
+          "Access date and time",
+          "Pages visited"
+        ]
+      },
+      "purpose": {
+        "title": "Purpose of Data Processing",
+        "items": [
+          "Ensure the secure and smooth operation of the website",
+          "Detect and resolve technical issues",
+          "Comply with legal obligations",
+          "Analyze site performance"
+        ]
+      },
+      "thirdParty": {
+        "title": "Third-Party Services",
+        "items": [
+          "Google Fonts — For loading typefaces",
+          "Cloudflare — DNS and security infrastructure",
+          "CDN (cdn.timerightproduction.org) — For serving image and media files"
+        ]
+      },
+      "cookies": {
+        "title": "Cookie Policy",
+        "text": "Our website uses only technically necessary cookies. No tracking, analytics, or marketing cookies are used. There are no forms, registrations, or data collection tools."
+      },
+      "rights": {
+        "title": "Your Rights Under KVKK",
+        "items": [
+          "Learn whether your personal data is being processed",
+          "Request information if your personal data has been processed",
+          "Learn the purpose of processing and whether it is used appropriately",
+          "Request the deletion or destruction of your personal data"
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "text": "To exercise your rights under KVKK or ask questions about our privacy policy, you can contact us at:"
+      }
+    }
   }
 }
