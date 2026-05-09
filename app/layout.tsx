@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Fatoş Yılmaz Casting",
     images: [
       {
-        url: "/fatos-yilmaz-og.png",
+        url: "/fatos-yilmaz-og-v2.png",
         width: 1200,
         height: 630,
         alt: "Fatoş Yılmaz Management - Cast Director",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fatoş Yılmaz Casting",
     description: "Professional Cast Directing & Talent Management",
-    images: ["/fatos-yilmaz-og.png"],
+    images: ["/fatos-yilmaz-og-v2.png"],
   },
 };
 
