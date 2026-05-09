@@ -52,7 +52,7 @@
   <text x="600" y="320" text-anchor="middle" class="title">CAST DIRECTOR</text>
 
   <!-- Cities (gold, clearly visible) -->
-  <text x="600" y="365" text-anchor="middle" class="cities">Istanbul  ·  Zurich  ·  Berlin  ·  Amsterdam</text>
+  <text x="600" y="365" text-anchor="middle" class="cities">Istanbul  ·  Zurich  ·  Berlin  ·  Rotterdam</text>
 
   <!-- Instagram handle with icon (centered) -->
   <g transform="translate(600, 420)">

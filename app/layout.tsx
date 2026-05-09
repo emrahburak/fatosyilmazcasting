@@ -18,7 +18,7 @@ const crimsonPro = Crimson_Pro({
 export const metadata: Metadata = {
   metadataBase: new URL('https://fatosyilmazcasting.com'),
   title: "Fatoş Yılmaz Casting | Cast Director",
-  description: "20+ years of experience in professional cast directing for film and TV. Istanbul, Zurich, Berlin, Amsterdam.",
+  description: "20+ years of experience in professional cast directing for film and TV. Istanbul, Zurich, Berlin, Rotterdam.",
   alternates: {
     canonical: '/',
   },
