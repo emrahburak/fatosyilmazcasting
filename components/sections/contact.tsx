@@ -70,14 +70,23 @@ export default function Contact() {
           <p className="font-cinzel text-[10px] tracking-[0.16em] uppercase text-muted">
             {t('contact.copyright')}
           </p>
-          <a
-            href="https://github.com/emrahburak"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 block font-cinzel text-[11px] tracking-wider text-muted/40 hover:text-bg-dark transition-colors duration-300"
-          >
-            developed by emrahburak
-          </a>
+          <div className="mt-3 flex items-center justify-center gap-4">
+            <a
+              href="/privacy"
+              className="font-cinzel text-[11px] tracking-wider text-muted/60 hover:text-gold transition-colors duration-300"
+            >
+              {t('contact.privacy')}
+            </a>
+            <span className="text-muted/30">|</span>
+            <a
+              href="https://github.com/emrahburak"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-cinzel text-[11px] tracking-wider text-muted/40 hover:text-bg-dark transition-colors duration-300"
+            >
+              developed by emrahburak
+            </a>
+          </div>
         </div>
       </div>
     </section>
