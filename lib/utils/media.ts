@@ -16,6 +16,6 @@ export const getMediaUrl = (filename: string | null, folder: MediaFolder = 'gene
   return `${CDN_BASE_URL}/${FOLDER_PATHS[folder]}/${cleanFilename}`;
 };
 
-export const getCatalogPdfUrl = (filename: string = 'fatosyilmazcasting-catalog.pdf'): string => {
+export const getCatalogPdfUrl = (filename: string = 'fatosyilmaz-catalog-2026.pdf'): string => {
   return `${CDN_BASE_URL}/${FOLDER_PATHS['catalog']}/${filename}`;
 };

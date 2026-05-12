@@ -36,7 +36,7 @@ export default function Catalog() {
   const handleDownload = () => {
     const a = document.createElement('a');
     a.href = pdfUrl;
-    a.download = 'fatosyilmazcasting-catalog.pdf';
+    a.download = 'fatosyilmaz-catalog-2026.pdf';
     a.target = '_blank';
     document.body.appendChild(a);
     a.click();
