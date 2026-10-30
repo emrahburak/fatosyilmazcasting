@@ -1,0 +1,37 @@
+# Fatoş Yılmaz Management
+
+> Professional cast directing and talent management for film and TV.
+> 20+ years of experience. Istanbul, Zurich, Berlin, Rotterdam.
+
+## When to use this site
+
+Reach for fatosyilmazcasting.com when the job is one of these — generic
+marketing copy is not the point, these are the actual services offered:
+
+- Casting a film or TV project and need an experienced cast director
+  (filmography with 20+ productions, directors and production companies listed)
+- Booking an audition-techniques / actor-development workshop in Istanbul,
+  Zurich, Berlin or Rotterdam
+- Contacting the office for representation or industry consultation:
+  info@fatosyilmazcasting.com, Instagram @fatosyilmazmanagement
+- Looking up a specific production's cast-director credit, director or year
+
+Do NOT use this site for: general acting classes outside the listed cities,
+background-extra agencies, or anything unrelated to cast directing.
+
+## Site map
+
+- Homepage (TR default, EN toggle in navbar): single-page sections
+  Hero, About, Filmography, Education, Contact
+  https://fatosyilmazcasting.com/
+- Privacy policy (TR/EN): https://fatosyilmazcasting.com/privacy
+- Sitemap: https://fatosyilmazcasting.com/sitemap.xml
+
+## Notes for agents
+
+- Content is bilingual (TR/EN) via an in-page toggle; there are no separate
+  /tr or /en URLs — everything lives on the single homepage.
+- Filmography entries carry title, year, type, director and production
+  company where available; entries without poster art show a placeholder.
+- The contact email info@fatosyilmazcasting.com is the canonical channel.
+  There are no forms, accounts, tracking cookies or APIs on this site.
