@@ -52,6 +52,45 @@ export const metadata: Metadata = {
   },
 };
 
+const siteUrl = 'https://fatosyilmazcasting.com';
+
+// JSON-LD identity graph: invisible <script>, no visual impact.
+// Satisfies agent checks for structured identity (Person) and
+// Organization contact/address completeness.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: 'Fatoş Yılmaz',
+      jobTitle: 'Casting Director',
+      description:
+        '20+ years of experience in professional cast directing for film and TV. Istanbul, Zurich, Berlin, Rotterdam.',
+      url: siteUrl,
+      image: `${siteUrl}/fatos-yilmaz-og-v3.png`,
+      email: 'mailto:info@fatosyilmazcasting.com',
+      sameAs: ['https://www.instagram.com/fatosyilmazmanagement/'],
+    },
+    {
+      '@type': 'Organization',
+      name: 'Fatoş Yılmaz Management',
+      url: siteUrl,
+      logo: `${siteUrl}/favicon.svg`,
+      sameAs: ['https://www.instagram.com/fatosyilmazmanagement/'],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'info@fatosyilmazcasting.com',
+        contactType: 'customer service',
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Istanbul',
+        addressCountry: 'TR',
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -59,6 +98,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${cinzel.variable} ${crimsonPro.variable} antialiased`}
         style={{ fontFamily: 'var(--font-crimson), serif' }}
